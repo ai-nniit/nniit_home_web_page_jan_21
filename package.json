@@ -7,12 +7,15 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy" : "gh-pages -d dist"
   },
   "dependencies": {
     "bootstrap": "^5.3.3",
     "embla-carousel-react": "^8.5.1",
     "framer-motion": "^11.3.19",
+    "gh-pages": "^6.2.0",
     "gsap": "^3.12.5",
     "leaflet": "^1.9.4",
     "lucide-react": "^0.460.0",
