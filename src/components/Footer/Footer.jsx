@@ -165,11 +165,11 @@ import { companyLinks, otherLinks, courseLinks, superKidsLinks, course } from '.
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-50 pt-12  pb-8 px-4 md:px-8">
-      <div className="max-w-7xl px-12 mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-12">
+    <footer className="bg-gray-50 pt-8  pb-8 px-1 md:px-8">
+      <div className="max-w-7xl px-6 mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-8">
           {/* Column 1: App Download & Counseling */}
-          <div className="space-y-8">
+          <div className="space-y-2">
             <AppDownload />
             <CounselingCard />
           </div>

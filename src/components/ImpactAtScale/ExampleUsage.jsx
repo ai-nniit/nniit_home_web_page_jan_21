@@ -161,6 +161,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import worldmap from '../../assets/world-map1.jpg';
 import group from '../../assets/group.png';
+import mobileImage from '../../assets/world-map1.jpg';
 
 // A helper function to handle the counting animation
 const useCountUp = (target, duration, startCount) => {
@@ -216,73 +217,80 @@ const ImpactMetrics = ({ statistics, annotations }) => {
 
   return (
     <div ref={sectionRef} className="mx-auto max-w-[80%] px-4 sm:px-8 lg:px-12 py-5">
-      <div className="flex flex-col lg:flex-row gap-15">
-        {/* Left Section */}
-        <div className="lg:w-1/2">
-          {/* Header Section */}
-          <header className="flex flex-col md:flex-row items-start md:items-center gap-6 mb-16">
-            <div className="w-24 h-24 relative">
-              <div className="absolute w-16 h-16 bg-green-200 rounded-full right-0 bottom-0" />
-              <div className="absolute w-8 h-12 bg-yellow-400 left-4 bottom-2" />
-              <div className="absolute w-4 h-8 bg-purple-400 left-0 bottom-2" />
-            </div>
-
-            <div>
-              <h1 className="text-4xl md:text-5xl font-bold mb-3">
-                Impact. At{' '}
-                <span className="relative inline-block">
-                  <span className="text-orange-500">scale</span>
-                  <span className="absolute -bottom-1 left-0 w-full h-2 bg-yellow-300 -z-10" />
-                </span>
-              </h1>
-              <p className="text-lg text-gray-600">
-                Making education affordable and accessible across the globe
-              </p>
-            </div>
-          </header>
-
-          {/* Statistics Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-            {statistics.map((stat, index) => (
-              <div key={index}>
-                <h2 className="text-4xl font-bold mb-2">
-                  {useCountUp(stat.value, 2000, startCount)}+
-                </h2>
-                <p className="text-gray-600">{stat.description}</p>
-              </div>
-            ))}
-          </div>
+  <div className="flex flex-col lg:flex-row gap-15">
+    {/* Left Section */}
+    <div className="lg:w-1/2">
+      {/* Header Section */}
+      <header className="flex flex-col md:flex-row items-start md:items-center gap-6 mb-16">
+        <div className="w-24 h-24 relative">
+          <div className="absolute w-16 h-16 bg-green-200 rounded-full right-0 bottom-0" />
+          <div className="absolute w-8 h-12 bg-yellow-400 left-4 bottom-2" />
+          <div className="absolute w-4 h-8 bg-purple-400 left-0 bottom-2" />
         </div>
 
-        {/* Right Section - World Map */}
-        <div className="lg:w-1/2">
-          <div className="relative w-full aspect-[4/3]">
-            <div className="absolute inset-0 left-[-80px] top-[50px]">
-              <img src={worldmap} alt="worldmap" />
-            </div>
-
-            {/* Annotation Bubbles */}
-            {annotations.map((annotation, index) => (
-              <div
-                key={index}
-                className="absolute group cursor-pointer"
-                style={{ left: annotation.x, top: annotation.y }}
-              >
-                <div className="w-12 h-12 rounded-full bg-white shadow-lg overflow-hidden">
-                  <img src={group} className="w-full h-full object-cover" />
-                </div>
-                <div className="flex items-center gap-2 bg-white rounded-full shadow-lg py-1 px-3 ml-4 mt-2">
-                  {annotation.icon && (
-                    <span className={`w-2 h-2 rounded-full ${annotation.icon}`} />
-                  )}
-                  <span className="text-sm whitespace-nowrap">{annotation.text}</span>
-                </div>
-              </div>
-            ))}
-          </div>
+        <div>
+          <h1 className="text-4xl md:text-5xl font-bold mb-3">
+            Impact. At{' '}
+            <span className="relative inline-block">
+              <span className="text-orange-500">scale</span>
+              <span className="absolute -bottom-1 left-0 w-full h-2 bg-yellow-300 -z-10" />
+            </span>
+          </h1>
+          <p className="text-lg text-gray-600">
+            Making education affordable and accessible across the globe
+          </p>
         </div>
+      </header>
+
+      {/* Statistics Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+        {statistics.map((stat, index) => (
+          <div key={index}>
+            <h2 className="text-4xl font-bold mb-2">
+              {useCountUp(stat.value, 2000, startCount)}+
+            </h2>
+            <p className="text-gray-600">{stat.description}</p>
+          </div>
+        ))}
       </div>
     </div>
+
+    {/* Right Section */}
+    <div className="lg:w-1/2">
+      {/* Desktop View: World Map */}
+      <div className="hidden lg:block relative w-full aspect-[4/3]">
+        <div className="absolute inset-0 left-[-80px] top-[50px]">
+          <img src={worldmap} alt="worldmap" />
+        </div>
+
+        {/* Annotation Bubbles */}
+        {annotations.map((annotation, index) => (
+          <div
+            key={index}
+            className="absolute group cursor-pointer"
+            style={{ left: annotation.x, top: annotation.y }}
+          >
+            <div className="w-12 h-12 rounded-full bg-white shadow-lg overflow-hidden">
+              <img src={group} className="w-full h-full object-cover" />
+            </div>
+            <div className="flex items-center gap-2 bg-white rounded-full shadow-lg py-1 px-3 ml-4 mt-2">
+              {annotation.icon && (
+                <span className={`w-2 h-2 rounded-full ${annotation.icon}`} />
+              )}
+              <span className="text-sm whitespace-nowrap">{annotation.text}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Mobile View: Replacement Image */}
+      <div className="block lg:hidden w-full">
+        <img src={mobileImage} alt="Mobile View" className="w-full h-auto object-cover" />
+      </div>
+    </div>
+  </div>
+</div>
+
   );
 };
 

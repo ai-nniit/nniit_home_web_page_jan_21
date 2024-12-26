@@ -14,7 +14,7 @@ const AppDownload = () => {
   return (
     <div className="space-y-6">
       <div>
-        <h2 className="text-lg font-semibold text-gray-900 mb-4">
+        <h2 className="text-lg font-semibold text-gray-900 mb-3">
           Get link in SMS to download the app
         </h2>
         <div className="flex gap-2">
@@ -29,9 +29,9 @@ const AppDownload = () => {
           />
           <button
             onClick={handleGetLink}
-            className="bg-blue-900 hover:bg-blue-800 text-white px-6 py-2 rounded-md transition-colors whitespace-nowrap"
+            className="bg-blue-900 hover:bg-blue-800 text-white px-4 py-2 rounded-md transition-colors whitespace-nowrap"
           >
-            Get the link
+            Get link
           </button>
         </div>
       </div>
