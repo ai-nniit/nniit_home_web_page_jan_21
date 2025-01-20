@@ -7,10 +7,7 @@ import { Play, ChevronRight, ChevronLeft, Eye, Heart } from 'lucide-react';
 
 const VideoClassCard = ({ teacher, className, views, language, thumbnail, subject, topic }) => {
   return (
-    <>
-   <br/>
-   <br/>
-    <div className="flex flex-col space-y-3 w-70 flex-shrink-0">
+    <div className="flex flex-col space-y-3 w-auto sm:w-70 flex-shrink-0">
       {/* Video Thumbnail */}
       <div className="relative group">
         <img
@@ -40,7 +37,7 @@ const VideoClassCard = ({ teacher, className, views, language, thumbnail, subjec
             <span>{views}</span>
           </div>
         </div>
-        
+
         {/* Topic and Likes */}
         <div className="flex justify-between items-center">
           <p className="text-sm text-gray-800">{topic}</p>
@@ -49,12 +46,11 @@ const VideoClassCard = ({ teacher, className, views, language, thumbnail, subjec
             <span>3.7M</span>
           </div>
         </div>
-        
+
         {/* Teacher's Name */}
         <p className="text-xs text-gray-400">{teacher}</p>
       </div>
     </div>
-    </>
   );
 };
 
@@ -142,16 +138,13 @@ const VideoClassesShowcase = () => {
   );
 
   return (
-    <>
-    <br/>
-    <br/>
-    <div className="max-w-7xl mx-auto px-32 py-10 bg-gradient-to-b from-blue-50 to-gray-50 pl-[68px]">
+    <div className="max-w-7xl mx-auto px-4 sm:px-32 py-10 bg-gradient-to-b from-blue-50 to-gray-50">
       {/* Header Section */}
       <div className="flex justify-between items-center mb-8">
-        <h2 className="text-3xl font-semibold text-gray-900">
+        <h2 className="text-xl sm:text-3xl font-semibold text-gray-900">
           Most engaging IIT JEE classes of all time
         </h2>
-        <button className="px-1 py-5 text-emerald-600 font-medium hover:text-emerald-700 transition-colors">
+        <button className="text-sm sm:text-base px-1 py-2 sm:py-5 text-emerald-600 font-medium hover:text-emerald-700 transition-colors">
           See All
         </button>
       </div>
@@ -161,14 +154,14 @@ const VideoClassesShowcase = () => {
         {/* Previous Button */}
         <button
           onClick={handlePrevious}
-          className="absolute -left-2 z-10 flex justify-between p-2 bg-white rounded-full shadow-lg hover:bg-gray-50 transition-colors"
+          className="absolute -left-2 z-10 flex justify-center p-2 bg-white rounded-full shadow-lg hover:bg-gray-50 transition-colors"
         >
           <ChevronLeft className="w-6 h-6 text-gray-600" />
         </button>
 
         {/* Video Carousel */}
-        <div className="flex space-x-6 mb-8 overflow-hidden w-full">
-          <div className="flex space-x-6 transition-transform duration-500 ease-in-out">
+        <div className="flex space-x-4 sm:space-x-6 mb-8 overflow-hidden w-full">
+          <div className="flex space-x-4 sm:space-x-6 transition-transform duration-500 ease-in-out">
             {displayedVideos.map((video, index) => (
               <VideoClassCard key={index} {...video} />
             ))}
@@ -184,7 +177,6 @@ const VideoClassesShowcase = () => {
         </button>
       </div>
     </div>
-    </>
   );
 };
 

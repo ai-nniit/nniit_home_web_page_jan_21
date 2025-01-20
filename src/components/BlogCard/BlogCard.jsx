@@ -333,7 +333,7 @@ import crashcourse from '../../assets/GoogleforIndia/iitjee.png';
 import neetcrashcourse from '../../assets/BlogCardImages/neet_crashcourse.jpeg';
 import class11 from '../../assets/BlogCardImages/class11.png'
 import { ChevronLeft, ChevronRight, GraduationCap, Book, TestTube, Brain, School, ArrowRight } from 'lucide-react';
-
+import MobileSlider from './MobileSlider';
 const examData = {
   'IIT-JEE': {
     Courses: [
@@ -1177,18 +1177,135 @@ export default function ExamCarousel() {
   const subcategories = Object.keys(examData[selectedCategory]);
   
   return (
-    <div className="max-w-7xl mx-auto px-16 py-15 relative">
+//     <div className="max-w-7xl mx-auto px-16 py-15 relative">
+//       <div className="text-left mb-7">
+//     <h1 className="text-4xl font-bold ml-16">
+//       Explore all our{' '}
+//       <span className="text-blue-600 inline-block relative">
+//     offerings
+//     <span className="absolute left-0 right-0 top-[100%] mt-2 transform rotate-30 bg-gradient-to-r from-yellow-500 to-transparent h-[5px]"></span>
+//   </span> 
+//     </h1>
+//   </div>
+//       {/* Main Categories */}
+//       <div className="flex flex-wrap justify-center gap-2 mb-3">
+//         {Object.keys(examData).map((category) => {
+//           const Icon = categoryIcons[category];
+//           return (
+//             <button
+//               key={category}
+//               onClick={() => {
+//                 setSelectedCategory(category);
+//                 setSelectedSubcategory('Courses');
+//               }}
+//               className={`flex items-center px-3 py-2.5 rounded-md text-sm font-sans 
+//                 ${selectedCategory === category
+//                   ? 'bg-black text-white shadow-lg scale-85'
+//                   : 'bg-transparent text-gray-600 hover:bg-gray-50 hover:scale-105'
+//                 }
+//                 shadow-md hover:shadow-lg`}
+//             >
+//               {Icon && <Icon className="w-4 h-4 mr-2" />}
+//               {category}
+//             </button>
+//           );
+//         })}
+//       </div>
+      
+//       <div className="flex gap-3 mb-3 p-2 ml-16 items-center">
+//         {subcategories.map((subcategory) => (
+//         <div
+//           key={subcategory}
+//           onClick={() => setSelectedSubcategory(subcategory)}
+//           className={`cursor-pointer text-xl font-bold transition-all relative ${
+//             selectedSubcategory === subcategory ? 'text-black' : 'text-black'
+//           }`}
+//         >
+//           {subcategory.toUpperCase()}
+//           {/* Underline for the selected subcategory */}
+//           {selectedSubcategory === subcategory && (
+//             <div
+//               className="absolute left-0 right-0 h-0.5 bg-red-500 rounded transition-all duration-300"
+//               style={{ bottom: '-5px' }}
+//             ></div>
+//           )}
+//         </div>
+//         ))}
+//       </div>
+
+//       {/* Carousel Container */}
+//       <div className="relative px-4 sm:px-6 lg:px-8 max-w-screen-lg mx-auto">
+//   <div className="overflow-hidden" ref={emblaRef}>
+//     <div className="embla__container flex gap-3">
+//       {examData[selectedCategory][selectedSubcategory].map((slide, index) => (
+//         <div key={index} className="embla__slide flex-grow-0 flex-shrink-0 w-full md:w-1/3 lg:w-1/4">
+//           <div className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+//             <div className="relative aspect-[4/3]">
+//               <img 
+//                 src={slide.image} 
+//                 alt={slide.title} 
+//                 className="w-full h-full object-cover" 
+//               />
+//               <div className="absolute inset-0 bg-gradient-to-br from-transparent to-black/20" />
+//             </div>
+            
+//             <div className="p-2">
+//               <span className="text-xs font-medium tracking-wider text-blue-600 mb-2 block">
+//                 {slide.category || 'Blog'}
+//               </span>
+              
+//               <h3 className="font-semibold text-lg mb-3 line-clamp-2">
+//                 {slide.title}
+//               </h3>
+              
+//               <p className="text-gray-600 text-sm mb-3 line-clamp-2">
+//                 {slide.description}
+//               </p>
+              
+//               <div className="flex items-center justify-between text-sm text-gray-600">
+//                 <span>Posted by {slide.author || 'Anonymous'}</span>
+//                 <ArrowRight className="w-4 h-4" />
+//               </div>
+//             </div>
+//           </div>
+//         </div>
+//       ))}
+//     </div>
+//   </div>
+
+//   {/* Scroll Buttons */}
+//   <button
+//     onClick={scrollPrev}
+//     className="absolute left-0 top-1/2 -translate-y-1/2 bg-white p-3 rounded-full shadow-lg hover:scale-110 transition-transform z-10"
+//   >
+//     <ChevronLeft className="w-6 h-6 text-gray-600" />
+//   </button>
+//   <button
+//     onClick={scrollNext}
+//     className="absolute right-0 top-1/2 -translate-y-1/2 bg-white p-3 rounded-full shadow-lg hover:scale-110 transition-transform z-10"
+//   >
+//     <ChevronRight className="w-6 h-6 text-gray-600" />
+//   </button>
+// </div>
+
+//     </div>
+
+
+<div className="max-w-7xl mx-auto px-12 py-15 relative">
+      {/* Heading */}
+      <div className='hidden md:block'>
       <div className="text-left mb-7">
-    <h1 className="text-4xl font-bold ml-16">
-      Explore all our{' '}
-      <span className="text-blue-600 inline-block relative">
-    offerings
-    <span className="absolute left-0 right-0 top-[100%] mt-2 transform rotate-30 bg-gradient-to-r from-yellow-500 to-transparent h-[5px]"></span>
-  </span> 
-    </h1>
-  </div>
-      {/* Main Categories */}
-      <div className="flex flex-wrap justify-center gap-2 mb-3">
+        <h1 className="text-4xl font-bold ml-16 md:text-4xl sm:text-2xl">
+          Explore all our{' '}
+          <span className="text-blue-600 inline-block relative">
+            offerings
+            <span className="absolute left-0 right-0 top-[100%] mt-2 transform rotate-30 bg-gradient-to-r from-yellow-500 to-transparent h-[5px]"></span>
+          </span>
+        </h1>
+      </div>
+
+      {/* Main Categories (Desktop Only) */}
+      <div className="hidden md:flex flex-wrap justify-center gap-2 mb-3">
         {Object.keys(examData).map((category) => {
           const Icon = categoryIcons[category];
           return (
@@ -1196,12 +1313,12 @@ export default function ExamCarousel() {
               key={category}
               onClick={() => {
                 setSelectedCategory(category);
-                setSelectedSubcategory('Courses');
+                setSelectedSubcategory("Courses");
               }}
               className={`flex items-center px-3 py-2.5 rounded-md text-sm font-sans 
                 ${selectedCategory === category
-                  ? 'bg-black text-white shadow-lg scale-85'
-                  : 'bg-transparent text-gray-600 hover:bg-gray-50 hover:scale-105'
+                  ? "bg-black text-white shadow-lg scale-85"
+                  : "bg-transparent text-gray-600 hover:bg-gray-50 hover:scale-105"
                 }
                 shadow-md hover:shadow-lg`}
             >
@@ -1211,83 +1328,86 @@ export default function ExamCarousel() {
           );
         })}
       </div>
-      
-      <div className="flex gap-3 mb-3 p-2 ml-16 items-center">
+
+      {/* Subcategories */}
+      <div className="flex gap-3 mb-3 p-2 ml-16 items-center md:text-xl text-sm">
         {subcategories.map((subcategory) => (
-        <div
-          key={subcategory}
-          onClick={() => setSelectedSubcategory(subcategory)}
-          className={`cursor-pointer text-xl font-bold transition-all relative ${
-            selectedSubcategory === subcategory ? 'text-black' : 'text-black'
-          }`}
-        >
-          {subcategory.toUpperCase()}
-          {/* Underline for the selected subcategory */}
-          {selectedSubcategory === subcategory && (
-            <div
-              className="absolute left-0 right-0 h-0.5 bg-red-500 rounded transition-all duration-300"
-              style={{ bottom: '-5px' }}
-            ></div>
-          )}
-        </div>
+          <div
+            key={subcategory}
+            onClick={() => setSelectedSubcategory(subcategory)}
+            className={`cursor-pointer font-bold transition-all relative ${
+              selectedSubcategory === subcategory ? "text-black" : "text-black"
+            }`}
+          >
+            {subcategory.toUpperCase()}
+            {selectedSubcategory === subcategory && (
+              <div
+                className="absolute left-0 right-0 h-0.5 bg-red-500 rounded transition-all duration-300"
+                style={{ bottom: "-5px" }}
+              ></div>
+            )}
+          </div>
         ))}
+      </div>
+      </div>
+      {/* Mobile Slider (Mobile Only) */}
+      <div className="md:hidden">
+        <MobileSlider />
       </div>
 
       {/* Carousel Container */}
       <div className="relative px-4 sm:px-6 lg:px-8 max-w-screen-lg mx-auto">
-  <div className="overflow-hidden" ref={emblaRef}>
-    <div className="embla__container flex gap-3">
-      {examData[selectedCategory][selectedSubcategory].map((slide, index) => (
-        <div key={index} className="embla__slide flex-grow-0 flex-shrink-0 w-full md:w-1/3 lg:w-1/4">
-          <div className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-            <div className="relative aspect-[4/3]">
-              <img 
-                src={slide.image} 
-                alt={slide.title} 
-                className="w-full h-full object-cover" 
-              />
-              <div className="absolute inset-0 bg-gradient-to-br from-transparent to-black/20" />
-            </div>
-            
-            <div className="p-2">
-              <span className="text-xs font-medium tracking-wider text-blue-600 mb-2 block">
-                {slide.category || 'Blog'}
-              </span>
-              
-              <h3 className="font-semibold text-lg mb-3 line-clamp-2">
-                {slide.title}
-              </h3>
-              
-              <p className="text-gray-600 text-sm mb-3 line-clamp-2">
-                {slide.description}
-              </p>
-              
-              <div className="flex items-center justify-between text-sm text-gray-600">
-                <span>Posted by {slide.author || 'Anonymous'}</span>
-                <ArrowRight className="w-4 h-4" />
+        <div className="overflow-hidden" ref={emblaRef}>
+          <div className="embla__container flex gap-3">
+            {examData[selectedCategory][selectedSubcategory].map((slide, index) => (
+              <div
+                key={index}
+                className="embla__slide flex-grow-0 flex-shrink-0 w-full md:w-1/3 lg:w-1/4"
+              >
+                <div className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                  <div className="relative aspect-[4/3]">
+                    <img
+                      src={slide.image}
+                      alt={slide.title}
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-br from-transparent to-black/20" />
+                  </div>
+                  <div className="p-2">
+                    <span className="text-xs font-medium tracking-wider text-blue-600 mb-2 block">
+                      {slide.category || "Blog"}
+                    </span>
+                    <h3 className="font-semibold text-lg mb-3 line-clamp-2">
+                      {slide.title}
+                    </h3>
+                    <p className="text-gray-600 text-sm mb-3 line-clamp-2">
+                      {slide.description}
+                    </p>
+                    <div className="flex items-center justify-between text-sm text-gray-600">
+                      <span>Posted by {slide.author || "Anonymous"}</span>
+                      <ArrowRight className="w-4 h-4" />
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
+            ))}
           </div>
         </div>
-      ))}
-    </div>
-  </div>
 
-  {/* Scroll Buttons */}
-  <button
-    onClick={scrollPrev}
-    className="absolute left-0 top-1/2 -translate-y-1/2 bg-white p-3 rounded-full shadow-lg hover:scale-110 transition-transform z-10"
-  >
-    <ChevronLeft className="w-6 h-6 text-gray-600" />
-  </button>
-  <button
-    onClick={scrollNext}
-    className="absolute right-0 top-1/2 -translate-y-1/2 bg-white p-3 rounded-full shadow-lg hover:scale-110 transition-transform z-10"
-  >
-    <ChevronRight className="w-6 h-6 text-gray-600" />
-  </button>
-</div>
-
+        {/* Scroll Buttons */}
+        <button
+          onClick={scrollPrev}
+          className="absolute left-0 top-1/2 -translate-y-1/2 bg-white p-3 rounded-full shadow-lg hover:scale-110 transition-transform z-10"
+        >
+          <ChevronLeft className="w-6 h-6 text-gray-600" />
+        </button>
+        <button
+          onClick={scrollNext}
+          className="absolute right-0 top-1/2 -translate-y-1/2 bg-white p-3 rounded-full shadow-lg hover:scale-110 transition-transform z-10"
+        >
+          <ChevronRight className="w-6 h-6 text-gray-600" />
+        </button>
+      </div>
     </div>
   );
 }

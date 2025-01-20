@@ -1,0 +1,83 @@
+.time-box {
+    animation: sparkle 3s infinite linear;
+  }
+  
+  @keyframes sparkle {
+    0%, 100% {
+      box-shadow: 0 0 5px rgba(255, 215, 0, 0.8), 0 0 10px rgba(255, 215, 0, 0.6), 0 0 15px rgba(255, 215, 0, 0.4);
+    }
+    50% {
+      box-shadow: 0 0 10px rgba(255, 215, 0, 0.8), 0 0 20px rgba(255, 215, 0, 0.6), 0 0 30px rgba(255, 215, 0, 0.4);
+    }
+  }
+  
+  .progress-line {
+    position: absolute;
+    left: 16px; /* Align with checkboxes */
+    top: 18px;
+    width: 2px;
+    height: calc(100% - 36px); /* Adjust to span between the first and last list item */
+    background-color: transparent;
+    overflow: hidden;
+  }
+  
+  .progress-line::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 223, 0, 1),
+      rgba(255, 215, 0, 0.9),
+      rgba(255, 223, 0, 1)
+    );
+    box-shadow: 0 0 10px rgba(255, 223, 0, 0.8), 0 0 20px rgba(255, 223, 0, 0.6);
+    animation: growLine 6s linear infinite, shimmer 1.5s linear infinite;
+    background-size: 200% 200%;
+  }
+  
+  @keyframes growLine {
+    0% {
+      height: 0;
+    }
+    100% {
+      height: 100%;
+    }
+  }
+  
+  @keyframes shimmer {
+    0% {
+      background-position: 0% 50%;
+    }
+    100% {
+      background-position: 100% 50%;
+    }
+  }
+  
+
+  @keyframes rotate-line {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .before:animate-rotate-line {
+    content: '';
+    position: absolute;
+    inset: -3px; /* Slightly outside the box boundary */
+    border-radius: 1rem; /* Matches the box's rounded corners */
+    border-width: 2px;
+    border-style: solid;
+    border-color: transparent;
+    border-top-color: #f9c846; /* Golden on top */
+    border-right-color: #f3904f; /* Orange on right */
+    border-bottom-color: #f9c846; /* Golden on bottom */
+    border-left-color: #f3904f; /* Orange on left */
+    animation: rotate-line 4s linear infinite; /* Continuous rotation */
+  }
+  
+  

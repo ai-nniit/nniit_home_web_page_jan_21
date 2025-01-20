@@ -367,6 +367,30 @@ const StudyMaterialFooter = () => {
                 <li>
                   <a href="#" className="text-gray-700 hover:underline focus:underline active:underline">NCERT Solutions for Class 12 Maths</a>
                 </li>
+                <li>
+                  <a href="#" className="text-gray-700 hover:underline focus:underline active:underline">NCERT Solutions for Class 12 Physics</a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-700 hover:underline focus:underline active:underline">NCERT Solutions for Class 12 Chemistry</a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-700 hover:underline focus:underline active:underline">NCERT Solutions for Class 12 Biology</a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-700 hover:underline focus:underline active:underline">NCERT Solutions for Class 12 Business Studies</a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-700 hover:underline focus:underline active:underline">NCERT Solutions for Class 12 Economics</a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-700 hover:underline focus:underline active:underline">NCERT Solutions for Class 12 Accountancy</a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-700 hover:underline focus:underline active:underline">NCERT Solutions for Class 12 English</a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-700 hover:underline focus:underline active:underline">NCERT Solutions for Class 12 Hindi</a>
+                </li>
               </ul>
             </div>
 
@@ -378,18 +402,72 @@ const StudyMaterialFooter = () => {
                 <li>
                   <a href="#" className="text-gray-700 hover:underline focus:underline active:underline">NCERT Solutions for Class 11 Maths</a>
                 </li>
+                <li>
+                  <a href="#" className="text-gray-700 hover:underline focus:underline active:underline">NCERT Solutions for Class 11 Physics</a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-700 hover:underline focus:underline active:underline">NCERT Solutions for Class 11 Chemistry</a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-700 hover:underline focus:underline active:underline">NCERT Solutions for Class 11 Biology</a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-700 hover:underline focus:underline active:underline">NCERT Solutions for Class 11 Business Studies</a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-700 hover:underline focus:underline active:underline">NCERT Solutions for Class 11 Economics</a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-700 hover:underline focus:underline active:underline">NCERT Solutions for Class 11 Accountancy</a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-700 hover:underline focus:underline active:underline">NCERT Solutions for Class 11 English</a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-700 hover:underline focus:underline active:underline">NCERT Solutions for Class 11 Hindi</a>
+                </li>
                 {/* More Class 11 links */}
               </ul>
             </div>
 
             <div className="space-y-4">
               <ul className="space-y-2">
-                <li>
+              <li>
                   <a href="#" className="text-gray-700 hover:underline focus:underline active:underline">NCERT Solutions for Class 10</a>
                 </li>
                 <li>
                   <a href="#" className="text-gray-700 hover:underline focus:underline active:underline">NCERT Solutions for Class 10 Maths</a>
                 </li>
+                <li>
+                  <a href="#" className="text-gray-700 hover:underline focus:underline active:underline">NCERT Solutions for Class 10 Science</a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-700 hover:underline focus:underline active:underline">NCERT Solutions for Class 10 English</a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-700 hover:underline focus:underline active:underline">NCERT Solutions for Class 10 Social Science</a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-700 hover:underline focus:underline active:underline">NCERT Solutions for Class 10 Hindi</a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-700 hover:underline focus:underline active:underline">NCERT Solutions for Class 9</a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-700 hover:underline focus:underline active:underline">NCERT Solutions for Calss 9 Maths</a>
+                </li> 
+                <li>
+                  <a href="#" className="text-gray-700 hover:underline focus:underline active:underline">NCERT Soltuions for Class 9 Science</a>
+                </li> 
+                <li>
+                  <a href="#" className="text-gray-700 hover:underline focus:underline active:underline">NCERT Solutions for Class 9 English</a>
+                </li> 
+                <li>
+                  <a href="#" className="text-gray-700 hover:underline focus:underline active:underline">NCERT Solutions for Class 9 Social Science</a>
+                </li> 
+                <li>
+                  <a href="#" className="text-gray-700 hover:underline focus:underline active:underline">NCERT Solutions for Class 9 Hindi</a>
+                </li> 
                 {/* More Class 10 links */}
               </ul>
             </div>
@@ -402,6 +480,33 @@ const StudyMaterialFooter = () => {
                 <li>
                   <a href="#" className="text-gray-700 hover:underline focus:underline active:underline">NCERT Solutions for Class 8 Maths</a>
                 </li>
+                <li>
+                  <a href="#" className="text-gray-700 hover:underline focus:underline active:underline">NCERT Solutions for Class 8 Science</a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-700 hover:underline focus:underline active:underline">NCERT Solutions for Class 8 English</a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-700 hover:underline focus:underline active:underline">NCERT Solutions for Class 8 Social Science</a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-700 hover:underline focus:underline active:underline">NCERT Books</a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-700 hover:underline focus:underline active:underline">NCERT Books Class 12</a>
+                </li> 
+                <li>
+                  <a href="#" className="text-gray-700 hover:underline focus:underline active:underline">NCERT Books Class 11</a>
+                </li> 
+                <li>
+                  <a href="#" className="text-gray-700 hover:underline focus:underline active:underline">NCERT Books Class 10</a>
+                </li> 
+                <li>
+                  <a href="#" className="text-gray-700 hover:underline focus:underline active:underline">NCERT Books Class 9</a>
+                </li> 
+                <li>
+                  <a href="#" className="text-gray-700 hover:underline focus:underline active:underline">NCERT Books Class 8</a>
+                </li> 
                 {/* More Class 8 links */}
               </ul>
             </div>
@@ -418,6 +523,27 @@ const StudyMaterialFooter = () => {
                 <li>
                   <a href="#" className="text-gray-700 hover:underline focus:underline active:underline">HC Verma Solutions</a>
                 </li>
+                <li>
+                  <a href="#" className="text-gray-700 hover:underline focus:underline active:underline">RD Sharma Solutions</a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-700 hover:underline focus:underline active:underline">RS Agarwal Solutions</a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-700 hover:underline focus:underline active:underline">NCERT Exemplar Solutions</a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-700 hover:underline focus:underline active:underline">Lakhmir Singh Solutions</a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-700 hover:underline focus:underline active:underline">DK Goel Solutions</a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-700 hover:underline focus:underline active:underline">TS Grewal Solutions</a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-700 hover:underline focus:underline active:underline">Sandeep Garg</a>
+                </li>
                 {/* More reference book links */}
               </ul>
             </div>
@@ -430,6 +556,21 @@ const StudyMaterialFooter = () => {
                 </li>
                 <li>
                   <a href="#" className="text-gray-700 hover:underline focus:underline active:underline">JEE Advanced</a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-700 hover:underline focus:underline active:underline">NEET</a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-700 hover:underline focus:underline active:underline">Olympaid Preparation</a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-700 hover:underline focus:underline active:underline">NDA</a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-700 hover:underline focus:underline active:underline">KVPY</a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-700 hover:underline focus:underline active:underline">NTSE</a>
                 </li>
                 {/* More exam links */}
               </ul>

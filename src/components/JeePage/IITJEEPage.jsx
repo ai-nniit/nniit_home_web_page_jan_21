@@ -10,34 +10,60 @@ import InteractiveEducationalPlatform from './JeeComponents/InteractiveEducation
 import ReferralBanner from './JeeComponents/ReferralBanner';
 import JEEExamLandingPage from './JeeComponents/JEEExamLandingPage';
 import JEEPromoSection from './JeeComponents/JeePromoSection/JEEPromoSection';
-
+import IITSection from './JeeComponents/IIT_Mentors';
+import HeroSection from './JeeComponents/Bannerr';
+import GoogleForIndia2024 from '../../components/GoogleForIndia/GoogleForIndia'
+import LearnersBadge from '../../components/GoogleForIndia/LearnBadge'
+import ScrollLockedFeatureSection from '../ScrollCards/ScrollCards';
+import PersonalizedSprint from './JeeComponents/PersonalizedSprint';
+import Carousel from './JeeComponents/CustomCirriculum';
+import StudyMaterialFooter from '../StudyMaterialFooter/StudyMaterialFooter'
+import FAQ from '../FAQ/FAQ';
+import App from './JeeComponents/PersonalizedSprint/PersonalizedApp';
+import CompetitorAnalysis from './JeeComponents/Topper_Section';
 
 const IITJEEPage = () => {
   return (
     <div className="iit-jee-page">
-      <section id="get-started" className="my-4">
-        <Bannerr/>
-        <DelayedFormPopup/>
+      <section id="get-started" className="my-0">
+        <HeroSection/>
+        <DelayedFormPopup/> 
       </section>
+
       <section id="features" className="my-0">
-      <FreeDemoComponent/>
+      {/* <FreeDemoComponent/> */}
+      <App/>
       </section>
+      
       <section id="batch" className="my-0">
-        <JEEPromoSection/>
+      <GoogleForIndia2024 />
+      <div className=" px-6 justify-center block md:hidden">
+      <LearnersBadge />
+    </div>
       </section>
+      <div className="block md:hidden">
+    <ScrollLockedFeatureSection/>
+   
+    </div>
+    <IITSection/>
+    {/* <PersonalizedSprint/> */}
+    <Carousel/>
       <section id="educators" className="my-0">
       <ScholarshipBanner/>
         <EducationFeatures/>
         <VideoClassesShowcase/>
         <InteractiveEducationalPlatform/>
       </section>
-      <section id="success-stories" className="my-0">
+      
+      <section id="success-stories" className="md:-mt-24">
         <ReferralBanner/>
       </section>
+      <CompetitorAnalysis/>
       <section id="about-exam" className="my-0">
-        <JEEExamLandingPage/>
+      <FAQ />
       </section>
       <Footer/>
+      <StudyMaterialFooter />
     </div>
   );
 };

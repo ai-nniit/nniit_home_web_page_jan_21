@@ -119,14 +119,12 @@ const InteractiveEducationalPlatform = () => {
 
   return (
     <div className="w-full bg-purple-50 min-h-screen">
-      <div className="max-w-7xl mx-auto px-32 py-10 pl-[81px]">
-        {/* Heading */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         <h1 className="text-2xl font-medium text-gray-800 mb-6 text-center sm:text-left">
-          Classes by  IIT-JEE Experts
+          Classes by IIT-JEE Experts
         </h1>
 
-        {/* Subject Filters */}
-        <div className="flex flex-wrap gap-3 mb-6">
+        <div className="flex flex-wrap gap-3 mb-6 justify-center sm:justify-start">
           {subjects.map((subject) => (
             <SubjectButton
               key={subject.id}
@@ -137,7 +135,6 @@ const InteractiveEducationalPlatform = () => {
           ))}
         </div>
 
-        {/* Results Summary */}
         <div className="mb-4">
           <h2 className="text-lg font-semibold text-gray-800">
             {activeSubject 
@@ -146,7 +143,6 @@ const InteractiveEducationalPlatform = () => {
           </h2>
         </div>
 
-        {/* Video Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
           {filteredVideos.map((video, index) => (
             <VideoCard key={index} {...video} />

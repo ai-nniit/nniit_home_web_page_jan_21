@@ -216,7 +216,7 @@ const ImpactMetrics = ({ statistics, annotations }) => {
   }, []);
 
   return (
-    <div ref={sectionRef} className="mx-auto max-w-[80%] px-4 sm:px-8 lg:px-12 py-5">
+    <div ref={sectionRef} className="mx-auto max-w-[80%] px-4 sm:px-6 lg:px-12 py-5">
   <div className="flex flex-col lg:flex-row gap-15">
     {/* Left Section */}
     <div className="lg:w-1/2">

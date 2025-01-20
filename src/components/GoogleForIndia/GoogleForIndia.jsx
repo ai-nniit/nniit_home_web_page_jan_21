@@ -123,12 +123,12 @@ import { ImCrying2 } from "react-icons/im";
 
 const CollectionGrid = ({ collectionData, cards }) => {
   return (
-    <div className="container mx-auto p-18">
+    <div className="container mx-auto p-6 -mt-6 md:p-18">
       <div className="flex flex-col lg:flex-row gap-8">
         {/* Left Section - Collection Info */}
         <div className="lg:w-2/5">
           <div className="flex items-center gap-1 mb-4">
-            <svg
+            {/* <svg
               className="w-5 h-5"
               viewBox="0 0 24 24"
               fill="none"
@@ -136,14 +136,28 @@ const CollectionGrid = ({ collectionData, cards }) => {
             >
               <rect x="3" y="3" width="18" height="18" rx="2" strokeWidth="2" />
               <path d="M7 7h10M7 12h10M7 17h10" strokeWidth="2" />
-            </svg>
-            <span className="text-sm font-medium tracking-wider text-gray-600">
+            </svg> */}
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" className="relative -top-1.2">
+                <path
+                  d="M24 11.9914C19.2924 12.4191 16.5877 12.8125 14.9272 14.1126C12.9757 15.6351 12.5136 18.4234 12 24C11.4693 18.2181 10.99 15.4469 8.85021 13.9587C7.18973 12.7954 4.50214 12.4191 0 12.0086C4.69044 11.5809 7.41227 11.1875 9.05564 9.90449C11.0243 8.36493 11.4864 5.59373 12 0C12.4793 5.14897 12.9073 7.90306 14.4993 9.49394C16.0913 11.0848 18.8645 11.5296 24 11.9914Z"
+                  fill="url(#paint0_linear)"
+                />
+                <defs>
+                  <linearGradient id="paint0_linear" x1="12" y1="0" x2="12" y2="24" gradientUnits="userSpaceOnUse">
+                    <stop stopColor="#39B6D8" />
+                    <stop offset="0.5" stopColor="#F7D344" />
+                    <stop offset="1" stopColor="#E38330" />
+                  </linearGradient>
+                </defs>
+              </svg>
+
+            <span className="text-sm font-extrabold font-serif tracking-wider text-gray-600">
               COLLECTION
             </span>
           </div>
 
-          <h1 className="text-3xl font-bold mb-2">{collectionData.title}</h1>
-          <p className="text-gray-600 mb-6">{collectionData.description}</p>
+          <h1 className="text-3xl font-extrabold font-serif mb-2">{collectionData.title}</h1>
+          <p className="text-gray-600 font-extralight font-serif mb-6">{collectionData.description}</p>
 
           <a
             href={collectionData.link}
@@ -154,8 +168,8 @@ const CollectionGrid = ({ collectionData, cards }) => {
           </a>
         </div>
 
-        {/* Right Section - Cards Grid */}
-        <div className="lg:w-3/5">
+        {/* Right Section - Cards Grid for Desktop */}
+        <div className="hidden lg:block lg:w-3/5">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {cards.map((card, index) => (
               <div
@@ -179,17 +193,17 @@ const CollectionGrid = ({ collectionData, cards }) => {
                   <h3 className="font-semibold text-lg mb-4 line-clamp-2">
                     {card.title}
                   </h3>
-                  {/* <p>{card.purchased}</p> */}
                   <p className="text-xs text-gray-700 mb-1 whitespace-nowrap overflow-hidden text-ellipsis">
                     <span className="text-blue-600 font-semibold">
                       {card.purchased.split(" ")[0]}
                     </span>{" "}
                     bought in past month
                   </p>
-                  {/* Star Rating */}
                   <div className="flex items-center text-yellow-500 mb-2">
                     {renderStars(card.rating)}
-                    <span className="text-gray-600 text-sm ml-2">{card.rating.toFixed(1)} {card.members}</span>
+                    <span className="text-gray-600 text-sm ml-2">
+                      {card.rating.toFixed(1)} {card.members}
+                    </span>
                   </div>
 
                   <div className="flex items-center justify-between text-sm text-gray-600">
@@ -198,11 +212,58 @@ const CollectionGrid = ({ collectionData, cards }) => {
                   </div>
                 </div>
               </div>
-            ))}  
+            ))}
+          </div>
+        </div>
+
+        {/* Right Section - Sliding Cards for Mobile */}
+        <div className="block lg:hidden w-full">
+          <div className="flex overflow-x-auto gap-3 scrollbar-hide">
+            {cards.map((card, index) => (
+              <div
+                key={index}
+                className="min-w-[75%] max-w-[75%] flex-shrink-0 bg-white rounded-lg overflow-hidden shadow-md hover:shadow-md transition-shadow"
+              >
+                <div className="relative aspect-[3/2]">
+                  <img
+                    src={card.image}
+                    alt={card.title}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-br from-transparent to-black/20" />
+                </div>
+
+                <div className="p-4">
+                  <span className="text-xs font-medium tracking-wider text-blue-600 mb-2 block">
+                    {card.label}
+                  </span>
+
+                  <h3 className="font-semibold text-lg mb-4 line-clamp-2">
+                    {card.title}
+                  </h3>
+                  <p className="text-xs text-gray-700 mb-1 whitespace-nowrap overflow-hidden text-ellipsis">
+                    <span className="text-blue-600 font-semibold">
+                      {card.purchased.split(" ")[0]}
+                    </span>{" "}
+                    bought in past month
+                  </p>
+                  <div className="flex items-center text-yellow-500 mb-2">
+                    {renderStars(card.rating)}
+                    <span className="text-gray-600 text-sm ml-2">
+                      {card.rating.toFixed(1)} {card.members}
+                    </span>
+                  </div>
+
+                  <div className="flex items-center justify-between text-sm text-gray-600">
+                    <span>Posted by {card.author}</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
-      <br/>
     </div>
   );
 };

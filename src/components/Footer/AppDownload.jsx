@@ -17,23 +17,24 @@ const AppDownload = () => {
         <h2 className="text-lg font-semibold text-gray-900 mb-3">
           Get link in SMS to download the app
         </h2>
-        <div className="flex gap-2">
-          <input
-            type="tel"
-            value={phoneNumber}
-            onChange={(e) => setPhoneNumber(e.target.value)}
-            placeholder="Enter mobile number"
-            className="flex-1 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-            pattern="[+][0-9]{2}[0-9]{10}"
-            maxLength={13}
-          />
-          <button
-            onClick={handleGetLink}
-            className="bg-blue-900 hover:bg-blue-800 text-white px-4 py-2 rounded-md transition-colors whitespace-nowrap"
-          >
-            Get link
-          </button>
-        </div>
+        <div className="flex justify-center items-center gap-2">
+  <input
+    type="tel"
+    value={phoneNumber}
+    onChange={(e) => setPhoneNumber(e.target.value)}
+    placeholder="Enter mobile number"
+    className="w-1/2 max-w-sm px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+    pattern="[+][0-9]{2}[0-9]{10}"
+    maxLength={13}
+  />
+  <button
+    onClick={handleGetLink}
+    className="bg-blue-900 hover:bg-blue-800 text-white px-3 py-2 rounded-md transition-colors whitespace-nowrap"
+  >
+    Get link
+  </button>
+</div>
+
       </div>
 
       <a

@@ -4,14 +4,14 @@ import { ArrowRight } from 'lucide-react'; // Ensure this package is installed: 
 const TestimonialSlide = ({ testimonial, isActive }) => {
   return (
     <div
-      className={`absolute inset-0 flex items-center transition-opacity duration-500 transform ${
+      className={`absolute inset-0 flex items-center transition-opacity duration-500 transform  ${
         isActive ? 'opacity-100 translate-x-0' : 'opacity-0 pointer-events-none'
       }`}
     >
       <div className="container mx-auto px-4 sm:px-6">
         <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
           {/* Image */}
-          <div className="relative w-40 h-40 sm:w-64 sm:h-64 md:w-96 md:h-96 flex-shrink-0">
+          {/* <div className="relative w-40 h-40 sm:w-64 sm:h-64 md:w-96 md:h-96 flex-shrink-0">
             <div className="absolute inset-0 rounded-full overflow-hidden">
               <img
                 src={testimonial.image}
@@ -19,8 +19,9 @@ const TestimonialSlide = ({ testimonial, isActive }) => {
                 className="w-full h-full object-cover filter grayscale"
               />
             </div>
-          </div>
-
+          </div> */}
+          <br/>
+          <br/>
           {/* Content */}
           <div className="flex-1 text-center md:text-left">
             <div className="inline-block px-4 py-1 rounded-full bg-white/10 text-xs sm:text-sm text-white/80 mb-4 sm:mb-6">
