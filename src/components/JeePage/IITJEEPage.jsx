@@ -21,6 +21,7 @@ import StudyMaterialFooter from '../StudyMaterialFooter/StudyMaterialFooter'
 import FAQ from '../FAQ/FAQ';
 import App from './JeeComponents/PersonalizedSprint/PersonalizedApp';
 import CompetitorAnalysis from './JeeComponents/Topper_Section';
+import ConceptMap from './JeeComponents/ConceptMap/ConceptMap';
 
 const IITJEEPage = () => {
   return (
@@ -29,7 +30,16 @@ const IITJEEPage = () => {
         <HeroSection/>
         <DelayedFormPopup/> 
       </section>
-
+      
+      <div className="container mx-auto px-4 py-8">
+        <h1 className="text-3xl font-bold text-gray-800 mb-8 text-center">
+          JEE Concept Map
+        </h1>
+        <div className="bg-white rounded-lg shadow-lg p-4">
+          <ConceptMap/>
+        </div>
+      </div>
+    
       <section id="features" className="my-0">
       {/* <FreeDemoComponent/> */}
       <App/>
@@ -52,7 +62,8 @@ const IITJEEPage = () => {
       <ScholarshipBanner/>
         <EducationFeatures/>
         <VideoClassesShowcase/>
-        <InteractiveEducationalPlatform/>
+        <br/>
+        {/* <InteractiveEducationalPlatform/> */}
       </section>
       
       <section id="success-stories" className="md:-mt-24">

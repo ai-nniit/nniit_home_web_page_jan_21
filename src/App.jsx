@@ -96,34 +96,3 @@ const App = () => {
 };
 
 export default App;
-
-
-
-
-{/* <WebRTCCall/> */}
-{/* <Testimonials items={testimonialData}/> */}
-{/* <Subscribe /> */}
-{/* <Services /> */}
-{/* <Banner /> */}{/* <Banner2 /> */}{/* <TimelineSection/> */}
-{/* <LearningPrograms/> */}
-{/* <StageShowcase/> */}
-{/* <LearnAnywhere/> */}
-{/* <MedicalTestimonials/> */}
-           
-
-
-//import WebRTCCall from "./components/WebRTC/WebRTCcall";
-//import StageShowcase from "./components/Animation/Animation";
-//import LearnAnywhere from "./components/Helper/Helper";
-//import Reviews from "./components/ReviewSection/ReviewSection";
-//import TimelineSection from "./components/Greata/Greata";
-// import Services from "./components/Services/Services";
-//import Banner from "./components/Banner/Banner";
-//import Subscribe from "./components/Subscribe/Subscribe";
-//import Banner2 from "./components/Banner/Banner2";
-//import TabletCourses from "./components/Carousel/Carousel";
-//import Testimonials from "./components/Testimonials/Testimonials";
-//import LearningPrograms from "./components/LearningPrograms/LearningPrograms";
-//import ExampleUsage from "./components/GoogleForIndia/GoogleForIndia";
-//import BlogCardGrid from "./components/BlogCard/BlogCard";
-//import MedicalTestimonials from "./components/Testimonials/Testimonials";

@@ -52,7 +52,7 @@ import refer from '../../../assets/Refer_Friend.webp'
 
 const ReferralBanner = () => {
   return (
-    <div className="relative w-full bg-gradient-to-r from-blue-50 via-purple-50 to-blue-50">
+    <div className="relative w-full md:mt-20 bg-gradient-to-r from-blue-50 via-purple-50 to-blue-50">
       <div className="relative w-full px-6 md:px-12 py-4 md:py-6 mx-auto overflow-hidden">
         {/* Content Container */}
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between">

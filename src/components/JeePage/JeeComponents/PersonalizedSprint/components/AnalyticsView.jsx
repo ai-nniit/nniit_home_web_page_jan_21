@@ -475,202 +475,201 @@ export const AnalyticsView = ({ answers = [] }) => {
       ? 'rgba(255, 99, 71, 0.7)'
       : link.color;
 
-  return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      className="w-full max-w-6xl mx-auto p-4 sm:p-4 bg-white rounded-xl shadow-lg"
-    >
-      <h2 className="text-2xl sm:text-2xl font-bold text-gray-800 mb-6 sm:mb-8">
-        Your Personalized Analysis
-      </h2>
-
-      <div className="space-y-8 sm:space-y-3">
-        <div className="-space-y-28">
-          {/* Radar Chart */}
-          <div className="bg-white rounded-lg p-4 sm:p-6">
-            <h3 className="text-lg sm:text-xl font-semibold mb-4">
-              Conceptual Understanding Radar
-            </h3>
-            <div className="h-[350px] sm:h-[400px] md:h-[500px]">
-              <ResponsiveRadar
-                data={radarData}
-                keys={['userScore', 'Top 1%', 'Top 10%', 'Average']}
-                indexBy="category"
-                maxValue={100}
-                margin={{
-                  top: 50,
-                  right: isMobile ? 40 : 80,
-                  bottom: 30,
-                  left: isMobile ? 40 : 80,
-                }}
-                curve="linearClosed"
-                borderWidth={2}
-                borderColor={{ from: 'color' }}
-                gridLevels={5}
-                gridShape="circular"
-                gridLabelOffset={36}
-                enableDots={true}
-                dotSize={isMobile ? 8 : 10}
-                dotColor={{ theme: 'background' }}
-                dotBorderWidth={2}
-                dotBorderColor={{ from: 'color' }}
-                enableDotLabel={!isMobile}
-                dotLabel="value"
-                dotLabelYOffset={-12}
-                colors={{ scheme: 'nivo' }}
-                fillOpacity={0.25}
-                blendMode="multiply"
-                animate={true}
-                motionConfig="gentle"
-                legends={[
-                  {
-                    anchor: isMobile ? 'bottom' : 'top-left',
-                    direction: isMobile ? 'row' : 'column',
-                    translateX: isMobile ? 0 : -50,
-                    translateY: isMobile ? 40 : -40,
-                    itemWidth: isMobile ? 60 : 80,
-                    itemHeight: 20,
-                    itemTextColor: '#999',
-                    symbolSize: isMobile ? 10 : 12,
-                    symbolShape: 'circle',
-                    effects: [
-                      {
-                        on: 'hover',
-                        style: {
-                          itemTextColor: '#000',
+      return (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          className="w-full max-w-6xl mx-auto p-4 sm:p-4 bg-white rounded-xl shadow-lg"
+        >
+          <h2 className="text-2xl sm:text-2xl font-bold text-gray-800 mb-6 sm:mb-8">
+            Your Personalized Analysis
+          </h2>
+      
+          {/* Horizontal Scrollable Container */}
+          <div className="sm:block flex sm:space-y-4 space-x-4 overflow-x-scroll sm:overflow-x-visible scrollbar-hide">
+            {/* Radar Chart */}
+            <div className="bg-white rounded-lg p-4 sm:p-6 flex-shrink-0 w-full sm:w-full md:w-full">
+              <h3 className="text-lg sm:text-xl font-semibold mb-4">
+                Conceptual Understanding Radar
+              </h3>
+              <div className="h-[350px] sm:h-[400px] md:h-[500px]">
+                <ResponsiveRadar
+                  data={radarData}
+                  keys={['userScore', 'Top 1%', 'Top 10%', 'Average']}
+                  indexBy="category"
+                  maxValue={100}
+                  margin={{
+                    top: 50,
+                    right: isMobile ? 40 : 80,
+                    bottom: 30,
+                    left: isMobile ? 40 : 80,
+                  }}
+                  curve="linearClosed"
+                  borderWidth={2}
+                  borderColor={{ from: 'color' }}
+                  gridLevels={5}
+                  gridShape="circular"
+                  gridLabelOffset={36}
+                  enableDots={true}
+                  dotSize={isMobile ? 8 : 10}
+                  dotColor={{ theme: 'background' }}
+                  dotBorderWidth={2}
+                  dotBorderColor={{ from: 'color' }}
+                  enableDotLabel={!isMobile}
+                  dotLabel="value"
+                  dotLabelYOffset={-12}
+                  colors={{ scheme: 'nivo' }}
+                  fillOpacity={0.25}
+                  blendMode="multiply"
+                  animate={true}
+                  motionConfig="gentle"
+                  legends={[
+                    {
+                      anchor: isMobile ? 'bottom' : 'top-left',
+                      direction: isMobile ? 'row' : 'column',
+                      translateX: isMobile ? 0 : -50,
+                      translateY: isMobile ? 40 : -40,
+                      itemWidth: isMobile ? 60 : 80,
+                      itemHeight: 20,
+                      itemTextColor: '#999',
+                      symbolSize: isMobile ? 10 : 12,
+                      symbolShape: 'circle',
+                      effects: [
+                        {
+                          on: 'hover',
+                          style: {
+                            itemTextColor: '#000',
+                          },
                         },
-                      },
-                    ],
-                  },
-                ]}
-              />
+                      ],
+                    },
+                  ]}
+                />
+              </div>
+            </div>
+      
+            {/* Line Chart */}
+            <div className="bg-white rounded-lg p-4 sm:p-6 flex-shrink-0 w-full sm:w-full md:w-full">
+              <h3 className="text-lg sm:text-xl font-semibold mb-2">
+                Progress Over Time
+              </h3>
+              <div className="h-[400px] sm:h-[450px] md:h-[500px]">
+                <ResponsiveLine
+                  data={lineData}
+                  margin={{
+                    top: 50,
+                    right: isMobile ? 40 : 110,
+                    bottom: isMobile ? 60 : 50,
+                    left: isMobile ? 50 : 60,
+                  }}
+                  xScale={{ type: 'point' }}
+                  yScale={{ type: 'linear', min: 0, max: 100 }}
+                  axisTop={null}
+                  axisRight={null}
+                  axisBottom={{
+                    tickSize: 5,
+                    tickPadding: 5,
+                    tickRotation: isMobile ? -45 : 0,
+                    legend: 'Timeline',
+                    legendOffset: 36,
+                    legendPosition: 'middle',
+                  }}
+                  axisLeft={{
+                    tickSize: 5,
+                    tickPadding: 5,
+                    tickRotation: 0,
+                    legend: 'Score',
+                    legendOffset: -40,
+                    legendPosition: 'middle',
+                  }}
+                  pointSize={isMobile ? 8 : 12}
+                  pointColor={{ theme: 'background' }}
+                  pointBorderWidth={2}
+                  pointBorderColor={{ from: 'serieColor' }}
+                  pointLabelYOffset={-12}
+                  useMesh={true}
+                  legends={[
+                    {
+                      anchor: isMobile ? 'bottom' : 'bottom-right',
+                      direction: isMobile ? 'row' : 'column',
+                      translateX: isMobile ? 0 : 100,
+                      translateY: isMobile ? 60 : 0,
+                      itemsSpacing: isMobile ? 2 : 0,
+                      itemDirection: 'left-to-right',
+                      itemWidth: 80,
+                      itemHeight: 20,
+                      itemOpacity: 0.75,
+                      symbolSize: isMobile ? 10 : 12,
+                      symbolShape: 'circle',
+                      symbolBorderColor: 'rgba(0, 0, 0, .5)',
+                      effects: [
+                        {
+                          on: 'hover',
+                          style: {
+                            itemBackground: 'rgba(0, 0, 0, .03)',
+                            itemOpacity: 1,
+                          },
+                        },
+                      ],
+                    },
+                  ]}
+                />
+              </div>
+            </div>
+      
+            {/* Sankey Chart */}
+            <div className="bg-white rounded-lg p-4 sm:p-6 flex-shrink-0 w-full sm:w-full md:w-full">
+              <h3 className="text-lg sm:text-xl font-semibold mb-4">
+                Performance Flow Analysis
+              </h3>
+              <div className="h-[300px] sm:h-[400px] md:h-[500px]">
+                <ResponsiveSankey
+                  data={sankeyData}
+                  margin={{
+                    top: 40,
+                    right: isMobile ? 50 : 160,
+                    bottom: isMobile ? 80 : 40,
+                    left: isMobile ? 30 : 50,
+                  }}
+                  align="justify"
+                  colors={customNodeColor}
+                  nodeOpacity={1}
+                  nodeThickness={isMobile ? 12 : 18}
+                  nodeInnerPadding={3}
+                  nodeSpacing={isMobile ? 12 : 24}
+                  nodeBorderWidth={0}
+                  nodeBorderColor={{ from: 'color', modifiers: [['darker', 0.8]] }}
+                  linkOpacity={0.5}
+                  linkHoverOthersOpacity={0.1}
+                  enableLinkGradient={true}
+                  linkColor={customLinkColor}
+                  labelPosition="outside"
+                  labelOrientation={isMobile ? 'vertical' : 'horizontal'}
+                  labelPadding={isMobile ? 8 : 16}
+                  legends={[
+                    {
+                      anchor: isMobile ? 'bottom' : 'bottom-right',
+                      direction: isMobile ? 'row' : 'column',
+                      translateX: isMobile ? 0 : 140,
+                      translateY: isMobile ? 70 : 0,
+                      itemWidth: 80,
+                      itemHeight: 20,
+                      itemTextColor: '#999',
+                      symbolSize: 14,
+                      effects: [
+                        {
+                          on: 'hover',
+                          style: {
+                            itemTextColor: '#000',
+                          },
+                        },
+                      ],
+                    },
+                  ]}
+                />
+              </div>
             </div>
           </div>
-
-          {/* Line Chart */}
-          <div className="bg-white rounded-lg p-4 sm:p-6">
-            <h3 className="text-lg sm:text-xl font-semibold mb-2">
-              Progress Over Time
-            </h3>
-            <div className="h-[400px] sm:h-[450px] md:h-[500px]">
-              <ResponsiveLine
-                data={lineData}
-                margin={{
-                  top: 50,
-                  right: isMobile ? 40 : 110,
-                  bottom: isMobile ? 60 : 50,
-                  left: isMobile ? 50 : 60,
-                }}
-                xScale={{ type: 'point' }}
-                yScale={{ type: 'linear', min: 0, max: 100 }}
-                axisTop={null}
-                axisRight={null}
-                axisBottom={{
-                  tickSize: 5,
-                  tickPadding: 5,
-                  tickRotation: isMobile ? -45 : 0,
-                  legend: 'Timeline',
-                  legendOffset: 36,
-                  legendPosition: 'middle',
-                }}
-                axisLeft={{
-                  tickSize: 5,
-                  tickPadding: 5,
-                  tickRotation: 0,
-                  legend: 'Score',
-                  legendOffset: -40,
-                  legendPosition: 'middle',
-                }}
-                pointSize={isMobile ? 8 : 12}
-                pointColor={{ theme: 'background' }}
-                pointBorderWidth={2}
-                pointBorderColor={{ from: 'serieColor' }}
-                pointLabelYOffset={-12}
-                useMesh={true}
-                legends={[
-                  {
-                    anchor: isMobile ? 'bottom' : 'bottom-right',
-                    direction: isMobile ? 'row' : 'column',
-                    translateX: isMobile ? 0 : 100,
-                    translateY: isMobile ? 60 : 0,
-                    itemsSpacing: isMobile ? 2 : 0,
-                    itemDirection: 'left-to-right',
-                    itemWidth: 80,
-                    itemHeight: 20,
-                    itemOpacity: 0.75,
-                    symbolSize: isMobile ? 10 : 12,
-                    symbolShape: 'circle',
-                    symbolBorderColor: 'rgba(0, 0, 0, .5)',
-                    effects: [
-                      {
-                        on: 'hover',
-                        style: {
-                          itemBackground: 'rgba(0, 0, 0, .03)',
-                          itemOpacity: 1,
-                        },
-                      },
-                    ],
-                  },
-                ]}
-              />
-            </div>
-          </div>
-
-          {/* Sankey Chart */}
-          <div className="bg-white rounded-lg p-4 sm:p-6 mt-0">
-            <h3 className="text-lg sm:text-xl font-semibold mb-4">
-              Performance Flow Analysis
-            </h3>
-            <div className="h-[300px] sm:h-[400px] md:h-[500px]">
-              <ResponsiveSankey
-                data={sankeyData}
-                margin={{
-                  top: 40,
-                  right: isMobile ? 50 : 160,
-                  bottom: isMobile ? 80 : 40,
-                  left: isMobile ? 30 : 50,
-                }}
-                align="justify"
-                colors={customNodeColor}
-                nodeOpacity={1}
-                nodeThickness={isMobile ? 12 : 18}
-                nodeInnerPadding={3}
-                nodeSpacing={isMobile ? 12 : 24}
-                nodeBorderWidth={0}
-                nodeBorderColor={{ from: 'color', modifiers: [['darker', 0.8]] }}
-                linkOpacity={0.5}
-                linkHoverOthersOpacity={0.1}
-                enableLinkGradient={true}
-                linkColor={customLinkColor}
-                labelPosition="outside"
-                labelOrientation={isMobile ? 'vertical' : 'horizontal'}
-                labelPadding={isMobile ? 8 : 16}
-                legends={[
-                  {
-                    anchor: isMobile ? 'bottom' : 'bottom-right',
-                    direction: isMobile ? 'row' : 'column',
-                    translateX: isMobile ? 0 : 140,
-                    translateY: isMobile ? 70 : 0,
-                    itemWidth: 80,
-                    itemHeight: 20,
-                    itemTextColor: '#999',
-                    symbolSize: 14,
-                    effects: [
-                      {
-                        on: 'hover',
-                        style: {
-                          itemTextColor: '#000',
-                        },
-                      },
-                    ],
-                  },
-                ]}
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-    </motion.div>
-  );
-};
+        </motion.div>
+      );
+    }      

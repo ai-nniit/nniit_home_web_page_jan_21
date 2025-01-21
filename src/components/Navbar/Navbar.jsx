@@ -82,7 +82,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed w-full z-10 transition-all duration-300 ${isScrolled ? "bg-white/70 shadow-lg backdrop-blur-md" : "bg-transparent"}`}
+      className={`fixed w-full z-0 transition-all duration-300 ${isScrolled ? "bg-white/70 shadow-lg backdrop-blur-md" : "bg-transparent"}`}
     >
       <motion.div
         initial={{ opacity: 0, y: -50 }}
