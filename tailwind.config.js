@@ -35,6 +35,7 @@ export default {
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
         sans: ['Public Sans', 'sans-serif'],
+        sf: ['SF Pro', 'sans-serif'],
       },
       colors: {
         primary: "#f7ba34",

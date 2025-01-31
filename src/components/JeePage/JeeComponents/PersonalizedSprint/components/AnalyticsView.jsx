@@ -546,6 +546,9 @@ export const AnalyticsView = ({ answers = [] }) => {
                   ]}
                 />
               </div>
+              <div className='block md:hidden '>
+                  <p className=' font-poppins'>Swipe Left for More Analysis</p>
+              </div>
             </div>
       
             {/* Line Chart */}
@@ -670,6 +673,15 @@ export const AnalyticsView = ({ answers = [] }) => {
               </div>
             </div>
           </div>
+          <section className="flex flex-col items-center justify-center bg-white mt-1 sm:-mt-3 text-white">
+                  <h2 className="text-2xl text-black font-bold mb-4 text-center">
+                  "Unlock deeper insights and tailored sprints just for you! Click below to discover more and supercharge your learning."
+                  </h2>
+                  <button className="bg-green-500 text-white py-2 px-6 rounded-lg text-lg font-semibold hover:bg-green-600 transition duration-300 ease-in-out">
+                    Explore Now
+                  </button>
+          </section>
         </motion.div>
+        
       );
     }      

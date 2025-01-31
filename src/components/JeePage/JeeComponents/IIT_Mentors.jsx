@@ -57,6 +57,16 @@ const IITSection = () => {
           <p className="text-gray-600 text-sm md:text-base">10 + Mentors</p>
         </div>
 
+        <div className="flex md:hidden flex-col items-center">
+          <img
+            src={IIT_Kharagpur}
+            alt="IIT Kharagpur"
+            className="w-20 md:w-24"
+          />
+          <h3 className="text-lg md:text-xl font-medium mt-4">IIT Kharagpur</h3>
+          <p className="text-gray-600 text-sm md:text-base">10 + Mentors</p>
+        </div>
+
         {/* IIT Madras */}
         <div className="flex flex-col items-center">
           <img

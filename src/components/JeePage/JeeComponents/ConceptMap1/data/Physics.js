@@ -1,0 +1,132 @@
+// export const PhysicsData = {
+//     nodes: [
+//       { id: "Physics", group: 1, size: 50, x: 400, y: 300 },
+//       { id: "Mechanics", group: 2, size: 30, x: 200, y: 200 },
+//       { id: "Electromagnetism", group: 2, size: 30, x: 600, y: 200 },
+//       { id: "Thermodynamics", group: 2, size: 30, x: 200, y: 400 },
+//       { id: "Quantum Physics", group: 2, size: 30, x: 600, y: 400 },
+//       { id: "Optics", group: 2, size: 30, x: 400, y: 500 },
+//       { id: "Waves", group: 2, size: 30, x: 300, y: 100 },
+//       { id: "Nuclear Physics", group: 2, size: 30, x: 500, y: 100 },
+//       { id: "Relativity", group: 2, size: 30, x: 700, y: 300 },
+//       { id: "Kinematics", group: 3, size: 20, x: 150, y: 250 },
+//       { id: "Dynamics", group: 3, size: 20, x: 650, y: 250 },
+//       { id: "Fluid Mechanics", group: 3, size: 20, x: 250, y: 450 },
+//       { id: "Particle Physics", group: 3, size: 20, x: 550, y: 450 },
+//       { id: "Acoustics", group: 3, size: 20, x: 650, y: 450 },
+//       { id: "Gravity", group: 3, size: 20, x: 250, y: 50 },
+//       { id: "Quantum Mechanics", group: 3, size: 20, x: 750, y: 350 },
+      
+//     ],
+//     links: [
+//       { source: "Physics", target: "Mechanics" },
+//       { source: "Physics", target: "Electromagnetism" },
+//       { source: "Physics", target: "Thermodynamics" },
+//       { source: "Physics", target: "Quantum Physics" },
+//       { source: "Physics", target: "Optics" },
+//       { source: "Physics", target: "Waves" },
+//       { source: "Physics", target: "Nuclear Physics" },
+//       { source: "Physics", target: "Relativity" },
+//       { source: "Mechanics", target: "Kinematics" },
+//       { source: "Mechanics", target: "Dynamics" },
+//       { source: "Thermodynamics", target: "Fluid Mechanics" },
+//       { source: "Quantum Physics", target: "Particle Physics" },
+      
+//       { source: "Waves", target: "Acoustics" },
+//       { source: "Mechanics", target: "Gravity" },
+      
+//       { source: "Quantum Physics", target: "Quantum Mechanics" },
+//       { source: "Relativity", target: "Quantum Mechanics" }
+//     ],
+//     conceptQuestions: {
+//       "Physics": "What are the fundamental forces and interactions in nature?",
+//       "Mechanics": "How do objects move and interact with forces?",
+//       "Electromagnetism": "How do electric and magnetic fields interact?",
+//       "Thermodynamics": "How does energy transfer between systems?",
+//       "Quantum Physics": "How do particles behave at the atomic scale?",
+//       "Optics": "How does light interact with matter?",
+//       "Waves": "How do waves propagate and interact?",
+//       "Nuclear Physics": "How do atomic nuclei behave and interact?",
+//       "Relativity": "How does space-time behave at high speeds?",
+//       "Kinematics": "How do we describe motion mathematically?",
+//       "Dynamics": "How do forces affect motion?",
+//       "Fluid Mechanics": "How do fluids behave under different conditions?",
+//       "Particle Physics": "What are the fundamental particles of matter?",
+//       "Acoustics": "How does sound propagate and interact?",
+//       "Gravity": "How does mass affect space-time?",
+//       "Quantum Mechanics": "What are the mathematical principles of quantum theory?"
+//     }
+//   };
+
+
+
+
+
+export const PhysicsData = {
+  nodes: [
+    { id: "Physics", group: 1, size: 50, x: 400, y: 300 },
+    { id: "Mechanics", group: 2, size: 30, x: 200, y: 200 },
+    { id: "Electromagnetism", group: 2, size: 30, x: 600, y: 200 },
+    { id: "Thermodynamics", group: 2, size: 30, x: 200, y: 400 },
+    { id: "Quantum Physics", group: 2, size: 30, x: 600, y: 400 },
+    { id: "Optics", group: 2, size: 30, x: 400, y: 500 },
+    { id: "Waves", group: 2, size: 30, x: 300, y: 100 },
+    { id: "Nuclear Physics", group: 2, size: 30, x: 500, y: 100 },
+    { id: "Relativity", group: 2, size: 30, x: 700, y: 300 },
+    { id: "Electrostatic", group: 2, size: 30, x: 800, y: 200 },
+    { id: "Kinematics", group: 3, size: 20, x: 150, y: 250 },
+    { id: "Dynamics", group: 3, size: 20, x: 650, y: 250 },
+    { id: "Fluid Mechanics", group: 3, size: 20, x: 250, y: 450 },
+    { id: "Particle Physics", group: 3, size: 20, x: 550, y: 450 },
+    { id: "Acoustics", group: 3, size: 20, x: 650, y: 450 },
+    { id: "Gravity", group: 3, size: 20, x: 250, y: 50 },
+    { id: "Quantum Mechanics", group: 3, size: 20, x: 750, y: 350 },
+    { id: "Circular Motion", group: 3, size: 20, x: 100, y: 200 },
+    { id: "Current Electronics", group: 3, size: 20, x: 900, y: 150 },
+    { id: "Moving Charges in Magnetic Field", group: 3, size: 20, x: 900, y: 250 }
+  ],
+  links: [
+    { source: "Physics", target: "Mechanics" },
+    { source: "Physics", target: "Electromagnetism" },
+    { source: "Physics", target: "Thermodynamics" },
+    { source: "Physics", target: "Quantum Physics" },
+    { source: "Physics", target: "Optics" },
+    { source: "Physics", target: "Waves" },
+    { source: "Physics", target: "Nuclear Physics" },
+    { source: "Physics", target: "Relativity" },
+    { source: "Physics", target: "Electrostatic" },
+    { source: "Mechanics", target: "Kinematics" },
+    { source: "Mechanics", target: "Dynamics" },
+    { source: "Mechanics", target: "Circular Motion" },
+    { source: "Thermodynamics", target: "Fluid Mechanics" },
+    { source: "Quantum Physics", target: "Particle Physics" },
+    { source: "Waves", target: "Acoustics" },
+    { source: "Mechanics", target: "Gravity" },
+    { source: "Quantum Physics", target: "Quantum Mechanics" },
+    { source: "Relativity", target: "Quantum Mechanics" },
+    { source: "Electrostatic", target: "Current Electronics" },
+    { source: "Electrostatic", target: "Moving Charges in Magnetic Field" }
+  ],
+  conceptQuestions: {
+    "Physics": "What are the fundamental forces and interactions in nature?",
+    "Mechanics": "How do objects move and interact with forces?",
+    "Electromagnetism": "How do electric and magnetic fields interact?",
+    "Thermodynamics": "How does energy transfer between systems?",
+    "Quantum Physics": "How do particles behave at the atomic scale?",
+    "Optics": "How does light interact with matter?",
+    "Waves": "How do waves propagate and interact?",
+    "Nuclear Physics": "How do atomic nuclei behave and interact?",
+    "Relativity": "How does space-time behave at high speeds?",
+    "Kinematics": "How do we describe motion mathematically?",
+    "Dynamics": "How do forces affect motion?",
+    "Fluid Mechanics": "How do fluids behave under different conditions?",
+    "Particle Physics": "What are the fundamental particles of matter?",
+    "Acoustics": "How does sound propagate and interact?",
+    "Gravity": "How does mass affect space-time?",
+    "Quantum Mechanics": "What are the mathematical principles of quantum theory?",
+    "Circular Motion": "What forces are involved in circular motion?",
+    "Electrostatic": "How do charged particles interact with each other?",
+    "Current Electronics": "What are the principles of current flow in electronic devices?",
+    "Moving Charges in Magnetic Field": "How do moving charges behave in magnetic fields?"
+  }
+};

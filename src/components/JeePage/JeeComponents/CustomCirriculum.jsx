@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
 import img1 from '../../../assets/image_1.png';
 import img2 from '../../../assets/image_2.png';
+import img3 from '../../../assets/image_3.png';
+import img4 from '../../../assets/image_4.png';
 const Carousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const images = [
     img1,
     img2, 
-    img1,
-    img2
+    img3,
+    img4
   ];
 
   const nextSlide = () => {

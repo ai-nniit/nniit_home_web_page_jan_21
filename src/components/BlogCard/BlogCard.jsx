@@ -326,7 +326,7 @@
 //       </div> */}
 import React, { useState } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
-import logoimg from '../../assets/converted_image.png';
+import logoimg from '../../assets/BlogCardImages/foundation.png';
 import class12 from '../../assets/BlogCardImages/class12.png';
 import custom_plan from '../../assets/BlogCardImages/customized_planning.png';
 import crashcourse from '../../assets/GoogleforIndia/iitjee.png';

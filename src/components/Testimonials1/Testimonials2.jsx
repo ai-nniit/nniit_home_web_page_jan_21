@@ -18,50 +18,50 @@ const CompanyShowcase1 = () => {
 
   const companies = [
     {
-      id: "Kiva",
-      image: exp,
-      text: "“We’re a global workforce, and Atlassian helps us stay in sync while doing async work. It’s been a big win for us.”",
-      author: "Brit Heiring",
-      position: "Department of CSE, IIT Karaghpur",
-      slideimg: iitkaragpur,
-      iitname: "IIT Karagpur",
-    },
-    {
-      id: "DHCS",
-      image: exp1,
-      text: "“Using Atlassian tools, we’ve streamlined operations and achieved higher efficiency in our workflows.”",
-      author: "John Doe",
-      position: "Department of IT, IIT Bombay",
-      slideimg: iitbombay,
-      iitname: "IIT Bombay",
-    },
-    {
-      id: "Sony",
-      image: exp2,
-      text: "“Atlassian's collaborative tools are a game changer for our music publishing operations.”",
-      author: "Jane",
-      position: "Department of MECH, IIT Delhi",
-      slideimg: iitkaragpur,
-      iitname: "IIT Delhi",
-    },
-    {
-      id: "AIIMS",
-      image: exp3,
-      text: "“Atlassian's collaborative tools are a game changer for our music publishing operations.”",
-      author: "Jane",
-      position: "Department of MECH, IIT Delhi",
-      slideimg: aiims,
-      iitname: "AIIMS Delhi",
-    },
-    {
-      id: "PGIMER",
-      image: exp4,
-      text: "“Atlassian's collaborative tools are a game changer for our music publishing operations.”",
-      author: "Jane",
-      position: "Department of MECH, IIT Delhi",
-      slideimg: pgimer,
-      iitname: "PGIMER Vellore",
-    },
+          id: "Kiva",
+          image: exp,
+          text: "“Mastering JEE is not about solving the toughest problems—it’s about building the mindset to break any problem into solvable steps.”",
+          author: "Tulsi",
+          position: "Department of CSE, IIT Karaghpur",
+          slideimg: iitkaragpur,
+          iitname: "IIT Karagpur",
+        },
+        {
+          id: "DHCS",
+          image: exp1,
+          text: "“Every question you solve is a step closer to IIT. Keep pushing, keep refining, and success will follow.”",
+          author: "Indhumathi Nambi",
+          position: "Department of IT, IIT Bombay",
+          slideimg: iitbombay,
+          iitname: "IIT Bombay",
+        },
+        {
+          id: "Sony",
+          image: exp2,
+          text: "“Concepts don’t just need to be memorized—they need to be conquered. Visualize, relate, and apply!”",
+          author: "Ajeesh Onamkuttan",
+          position: "Department of MECH, IIT Delhi",
+          slideimg: iitkaragpur,
+          iitname: "IIT Delhi",
+        },
+         {
+              id: "AIIMS",
+              image: exp3,
+              text: "“Becoming a doctor is not just about clearing NEET—it’s about developing the patience, precision, and perseverance that define a true healer”",
+              author: "Uma Devi",
+              position: "Department of Clinical, AIIMS Delhi",
+              slideimg: aiims,
+              iitname: "AIIMS Delhi",
+            },
+            {
+              id: "PGIMER",
+              image: exp4,
+              text: "“Your competition is not the lakhs of students appearing for NEET—it’s the part of you that wants to give up. Overcome that, and you will succeed.”",
+              author: "Jane",
+              position: "Surgical Department, PGIMER Vellore",
+              slideimg: pgimer,
+              iitname: "PGIMER Vellore",
+            },
   ];
 
   const selectedData = companies[activeIndex];
@@ -119,7 +119,7 @@ const CompanyShowcase1 = () => {
           className="w-full md:w-1/2 z-10"
         >
            
-          <p className="text-sm uppercase tracking-wide mt-5">Small Medium Business</p>
+          <p className="text-sm uppercase tracking-wide mt-5">IIT-JEE/NEET Experts</p>
           <h2 className="text-xl md:text-2xl font-serif font-bold mb-4">{selectedData.text}</h2>
           <p className="font-semibold font-serif">{selectedData.author}</p>
           <p className="text-gray-400">{selectedData.position}</p>
