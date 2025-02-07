@@ -41,21 +41,26 @@ const IITJEEPage = () => {
         <HeroSection/>
         <DelayedFormPopup/> 
       </section>
-
+      <br/>
       {/* <Features/> */}
 
       <EducationFeatures/>
-
+      <br/>
+      <br/>
       <section id='guidence'> <IITSection/>  </section>
-      
-
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
       <section id="courses" className="my-0">
       <GoogleForIndia2024 />
       <div className=" px-6 justify-center block md:hidden">
       <LearnersBadge />
         </div>
       </section>
-
+      
 
       <section id='iit-experts'><VideoClassesShowcase/></section>
 

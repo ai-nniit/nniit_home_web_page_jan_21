@@ -123,20 +123,11 @@ import { ImCrying2 } from "react-icons/im";
 
 const CollectionGrid = ({ collectionData, cards }) => {
   return (
-    <div className="container mx-auto p-6 -mt-6 md:p-18">
+    <div className="container mx-auto p-6 -mt-28 md:p-14">
       <div className="flex flex-col lg:flex-row gap-8">
         {/* Left Section - Collection Info */}
         <div className="lg:w-2/5">
           <div className="flex items-center gap-1 mb-4">
-            {/* <svg
-              className="w-5 h-5"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-            >
-              <rect x="3" y="3" width="18" height="18" rx="2" strokeWidth="2" />
-              <path d="M7 7h10M7 12h10M7 17h10" strokeWidth="2" />
-            </svg> */}
             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" className="relative -top-1.2">
                 <path
                   d="M24 11.9914C19.2924 12.4191 16.5877 12.8125 14.9272 14.1126C12.9757 15.6351 12.5136 18.4234 12 24C11.4693 18.2181 10.99 15.4469 8.85021 13.9587C7.18973 12.7954 4.50214 12.4191 0 12.0086C4.69044 11.5809 7.41227 11.1875 9.05564 9.90449C11.0243 8.36493 11.4864 5.59373 12 0C12.4793 5.14897 12.9073 7.90306 14.4993 9.49394C16.0913 11.0848 18.8645 11.5296 24 11.9914Z"
@@ -151,17 +142,17 @@ const CollectionGrid = ({ collectionData, cards }) => {
                 </defs>
               </svg>
 
-            <span className="text-sm font-extrabold font-serif tracking-wider text-gray-600">
+            <span className="text-sm font-extrabold font-sf tracking-wider text-gray-600">
               COLLECTION
             </span>
           </div>
 
-          <h1 className="text-3xl font-extrabold font-serif mb-2">{collectionData.title}</h1>
-          <p className="text-gray-600 font-extralight font-serif mb-6">{collectionData.description}</p>
+          <h1 className="text-3xl font-extrabold font-sf mb-2">{collectionData.title}</h1>
+          <p className="text-gray-600 font-extralight font-sf mb-6">{collectionData.description}</p>
 
           <a
             href={collectionData.link}
-            className="text-blue-600 hover:text-blue-700 inline-flex items-center gap-1 font-medium"
+            className="text-blue-600 hover:text-blue-700 inline-flex items-center gap-1 font-sf"
           >
             View the collection
             <ArrowRight className="w-4 h-4" />
@@ -180,34 +171,34 @@ const CollectionGrid = ({ collectionData, cards }) => {
                   <img
                     src={card.image}
                     alt={card.title}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover font-sf"
                   />
                   <div className="absolute inset-0 bg-gradient-to-br from-transparent to-black/20" />
                 </div>
 
                 <div className="p-4">
-                  <span className="text-xs font-medium tracking-wider text-blue-600 mb-2 block">
+                  <span className="text-xs font-sf tracking-wider text-blue-600 mb-2 block">
                     {card.label}
                   </span>
 
-                  <h3 className="font-semibold text-lg mb-4 line-clamp-2">
+                  <h3 className="font-semibold text-lg mb-4 line-clamp-2 font-sf">
                     {card.title}
                   </h3>
                   <p className="text-xs text-gray-700 mb-1 whitespace-nowrap overflow-hidden text-ellipsis">
-                    <span className="text-blue-600 font-semibold">
+                    <span className="text-blue-600 font-semibold font-sf">
                       {card.purchased.split(" ")[0]}
                     </span>{" "}
                     bought in past month
                   </p>
                   <div className="flex items-center text-yellow-500 mb-2">
                     {renderStars(card.rating)}
-                    <span className="text-gray-600 text-sm ml-2">
+                    <span className="text-gray-600 text-sm ml-2 font-sf">
                       {card.rating.toFixed(1)} {card.members}
                     </span>
                   </div>
 
-                  <div className="flex items-center justify-between text-sm text-gray-600">
-                    <span>Posted by {card.author}</span>
+                  <div className="flex items-center justify-between text-sm text-gray-600 font-sf">
+                    <span>Created by {card.author}</span>
                     <ArrowRight className="w-4 h-4" />
                   </div>
                 </div>
@@ -255,7 +246,7 @@ const CollectionGrid = ({ collectionData, cards }) => {
                   </div>
 
                   <div className="flex items-center justify-between text-sm text-gray-600">
-                    <span>Posted by {card.author}</span>
+                    <span>Created by {card.author}</span>
                     <ArrowRight className="w-4 h-4" />
                   </div>
                 </div>
@@ -302,7 +293,7 @@ const ExampleUsage = () => {
       label: "IIT/ JEE",
       title: "Crack JEE with Confidence: Focused Learning and Expert Guidance to Secure Your Future.",
       purchased: "2L+ bought in past month",
-      author: "NNIIT",
+      author: "IIT Kharagpur Faculty",
       rating: 5.0,
       members: "(80k)"
     },
@@ -311,7 +302,7 @@ const ExampleUsage = () => {
       label: "NEET",
       title: "Achieve Medical Excellence: NEET Preparation that Turns Dreams into Reality.",
       purchased: "1.8L+ bought in past month",
-      author: "NNIIT",
+      author: "AIIMS Delhi Faculty",
       rating: 4.9,
       members: "(85k)"
     },
@@ -320,7 +311,7 @@ const ExampleUsage = () => {
       label: "IPMAT",
       title: "IPMAT Success Awaits: Expert Coaching for a Secure Path into India’s Leading B-Schools",
       purchased: "1.6L+ bought in past month",
-      author: "NNIIT",
+      author: "IIM Bengaluru",
       rating: 4.8,
       members: "(85k)"
     },

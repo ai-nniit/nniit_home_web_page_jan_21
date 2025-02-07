@@ -82,7 +82,7 @@ const Bannerr = () => {
                     : "translateX(200%) scale(0.8)",
                   opacity: isCurrent ? 1 : 0.7,
                   zIndex: isCurrent ? 10 : 5,
-                  width: isCurrent ? "90%" : "50%",
+                  width: isCurrent ? "89%" : "50%",
                   height: "95%",
                 }}
               >

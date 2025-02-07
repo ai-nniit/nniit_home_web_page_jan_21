@@ -35,7 +35,7 @@ const Counter = ({ target }) => {
 
 const ResultsSection = () => {
   return (
-    <div className="bg-white py-16 px-8">
+    <div className="bg-white mx-auto p-14">
       <header className="mb-4 px-4">
           <div className="flex items-center space-x-1 mb-0.5">
             <svg
@@ -65,49 +65,49 @@ const ResultsSection = () => {
                 </linearGradient>
               </defs>
             </svg>
-            <p className="text-[10px] text-gray-400 mt-2 font-serif font-light">
+            <p className="text-[10px] text-gray-400 mt-2 font-sf font-light">
               DISCOVER NEW PERSPECTIVES
             </p>
           </div>
-          <h3 className="text-2xl md:text-3xl font-extrabold font-serif text-black -mt-0 text-left">
+          <h3 className="text-2xl md:text-3xl font-extrabold font-sf-bold text-black -mt-0 text-left">
             Impact At Scale
           </h3>
         </header>
-      <div className="grid gap-8 md:grid-cols-3">
+      <div className="grid gap-8 mt-10 md:grid-cols-3">
         <div className="relative text-center">
           <div className="absolute left-0 top-0 h-full border-l border-gray-300">
             <div className="bg-gray-700 w-0.5 h-8"></div>
           </div>
-          <span className="inline-block bg-purple-200 text-purple-700 text-sm px-4 py-1 rounded-full mb-4">
-            Personalized Learning
+          <span className="inline-block font-sf bg-purple-200 text-purple-700 text-sm px-4 py-1 rounded-full mb-4">
+          Global Reach
           </span>
-          <h3 className="text-4xl font-bold"><Counter target={580} />%</h3>
-          <p className="text-gray-600 mt-2 px-3">
-            increase in on-site screening appointments with a 1:3 pick up to booking rate
+          <h3 className="text-3xl font-bold font-sf"><Counter target={57} />+ Countries</h3>
+          <p className="text-gray-600 mt-2 px-3 font-sf">
+          Empowering learners worldwide with personalized, flexible, and high-impact live classes.
           </p>
         </div>
         <div className="relative text-center">
           <div className="absolute left-0 top-0 h-full border-l border-gray-300">
             <div className="bg-gray-700 w-0.5 h-8"></div>
           </div>
-          <span className="inline-block bg-orange-200 text-orange-700 text-sm px-4 py-1 rounded-full mb-4">
-            One On One Learning
+          <span className="inline-block bg-orange-200 text-orange-700 text-sm px-4 py-1 rounded-full mb-4 font-sf">
+          Live Learning Hours
           </span>
-          <h3 className="text-4xl font-bold"><Counter target={74} />%</h3>
-          <p className="text-gray-600 mt-2 px-3">
-            screening pass rate by qualifying the top 0.6% of 39,000 database leads
+          <h3 className="text-2xl font-bold font-sf"><Counter target={2.1} />+ Crore Hours</h3>
+          <p className="text-gray-600 mt-2 px-3 font-sf">
+          Delivering extensive, high-quality, and interactive one-on-one learning experiences across the globe.
           </p>
         </div>
         <div className="relative text-center">
           <div className="absolute left-0 top-0 h-full border-l border-gray-300">
             <div className="bg-gray-700 w-0.5 h-8"></div>
           </div>
-          <span className="inline-block bg-green-200 text-green-700 text-sm px-4 py-1 rounded-full mb-4">
-            24/7 Doubt Support
+          <span className="inline-block bg-green-200 text-green-700 text-sm px-4 py-1 rounded-full mb-4 font-sf">
+          Doubts Resolved
           </span>
-          <h3 className="text-4xl font-bold"><Counter target={2} /> second</h3>
-          <p className="text-gray-600 mt-2">
-            average response time to participant inquiries 24/7 in multiple languages
+          <h3 className="text-2xl font-bold font-sf"><Counter target={25} />+ Lakh Doubts Answered</h3>
+          <p className="text-gray-600 mt-2 font-sf">
+          Ensuring clarity and deeper understanding by resolving every student's queries instantly through our app.
           </p>
         </div>
       </div>

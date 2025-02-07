@@ -383,8 +383,28 @@ const Hero = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    phone: "",
+    otp: "",
+    dropdown: "",
     state: "",
   });
+
+  const [showOtpField, setShowOtpField] = useState(false);
+
+  // const handleChange = (e) => {
+  //   setFormData({ ...formData, [e.target.name]: e.target.value });
+  // };
+
+  const handleSendOtp = () => {
+    if (formData.phone.length === 10) {
+      setShowOtpField(true);
+    } else {
+      alert("Please enter a valid 10-digit phone number.");
+    }
+  };
+
+  
+
   const [startCount, setStartCount] = useState(false);
   const statsRef = useRef();
 
@@ -445,16 +465,14 @@ const Hero = () => {
       <div className="relative z-10">
         <Navbar />
         <br/>
-        <br/>
-        <br/>
-        <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 min-h-[50px] px-6 lg:px-12 py-12">
+        <div className="container  items-center h-screen  mx-auto w-full justify-center grid grid-cols-1 lg:grid-cols-2 min-h-[50px] px-6 lg:px-12 py-12">
           {/* Brand Info */}
-          <div className="flex flex-col justify-center">
+          <div className="flex flex-col">
             <motion.h1
               variants={FadeUp(0.6)}
               initial="initial"
               animate="animate"
-              className="text-4xl font-semibold font-sf text-white leading-tight"
+              className=" text-3xl md:text-4xl font-semibold font-sf text-white leading-tight"
             >
               Revolutionizing{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">
@@ -470,146 +488,213 @@ const Hero = () => {
               variants={FadeUp(0.8)}
               initial="initial"
               animate="animate"
-              className="text-xl  font-sf text-white mt-4"
+              className="text-sm md:text-xl  font-sf text-white mt-4"
             >
              Learn your way with a fully customized curriculum and one-on-one support—education made for you.
             </motion.h6>
 
-            {/* Buttons */}
-            <div className="flex flex-wrap space-x-4 mt-6">
-      <motion.button
-        className="flex items-center bg-white/30 backdrop-blur-sm border border-white/40 text-white px-4 py-2 rounded-md hover:bg-white/50 transition shadow-lg hover:shadow-white/70"
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
-      >
-        IIT JEE <FaGraduationCap className="ml-2 text-lg" />
-      </motion.button>
 
-      <motion.button
-        className="flex items-center bg-white/30 backdrop-blur-sm border border-white/40 text-white px-4 py-2 rounded-md hover:bg-white/50 transition shadow-lg hover:shadow-white/70"
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
-      >
-        NEET <FaMicroscope className="ml-2 text-lg" />
-      </motion.button>
+            {/*Buttons*/}
 
+            <div className="flex justify-center gap-2 md:gap-4 mt-12 overflow-hidden whitespace-nowrap">
+  {[
+    { label: "IIT JEE", icon: <FaGraduationCap className="ml-2 text-lg" /> },
+    { label: "NEET", icon: <FaMicroscope className="ml-2 text-lg" /> },
+    { label: "Explore", icon: <FiZap className="ml-2 text-lg" /> },
+  ].map((button, index) => (
+    <div key={index} className="relative w-[100px] h-[35px] md:w-[180px] md:h-[45px] group">
+      <div
+        className="absolute inset-0 rounded-[30px] bg-gradient-to-r from-cyan-400 via-yellow-300 to-orange-400
+          opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm group-hover:animate-pulse"
+      ></div>
+      <img
+        src="/gradient1208-3p8p-200h.png"
+        alt="gradient"
+        className="absolute top-0 left-0 w-full h-full rounded-[30px]"
+      />
       <motion.button
-        className="flex items-center bg-white/30 backdrop-blur-sm border border-white/40 text-white px-4 py-2 rounded-md hover:bg-white/50 transition shadow-lg hover:shadow-white/70"
+        className="absolute top-0 left-0 w-full h-full flex items-center justify-center rounded-[30px] bg-white/50 backdrop-blur-lg 
+          group-hover:scale-[1.02] transition-transform duration-300 text-white text-[10px] md:text-[20px] font-bold font-sf leading-6"
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
       >
-        Explore <FiZap className="ml-2 text-lg" />
+        {button.label} {button.icon}
       </motion.button>
     </div>
+  ))}
+</div>
+
 
             {/* Statistics Section */}
-            <div ref={statsRef} className="flex flex-wrap gap-6 mt-12 text-center">
-              <div className="flex-1">
-                <h3 className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
-                  {useCountUp(100, 2000, startCount)}%
-                </h3>
-                <p className="text-gray-300">Personalization Learning</p>
-              </div>
+            <div ref={statsRef} className="flex flex-wrap gap-4 mt-12 text-center">
+  <div className="flex-1 flex flex-col items-center">
+  <h3 className="text-3xl font-bold font-sf bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+      {useCountUp(100000, 2000, startCount).toLocaleString()}+
+    </h3>
+    <p className="text-gray-300 font-sf">Active Learners</p>
 
-              <div className="flex-1">
-                <h3 className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
-                  {useCountUp(30, 2000, startCount)}%
-                </h3>
-                <p className="text-gray-300">Learning Efficiency Improvement</p>
-              </div>
+  </div>
 
-              <div className="flex-1">
-                <h3 className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
-                  {useCountUp(100000, 2000, startCount).toLocaleString()}+
-                </h3>
-                <p className="text-gray-300">Active Students utilizing the platform</p>
-              </div>
-            </div>
-          </div>
-          {/* End Brand Info */}
-          <div className="flex justify-center items-center">
-      <motion.div
-        variants={FadeUp(0.8)}
-        initial="initial"
-        animate="animate"
-        className="w-full max-w-[500px] md:max-w-[350px] ml-10"
+  <div className="w-[2px] bg-white opacity-50 md:block hidden"></div> {/* Thin white line */}
+
+  <div className="flex-1 flex flex-col items-center">
+    <h3 className="text-3xl font-bold font-sf bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+      {useCountUp(30, 2000, startCount)}%
+    </h3>
+    <p className="text-gray-300 font-sf">Learning Efficiency Improvement</p>
+  </div>
+
+  <div className="w-[2px] bg-white opacity-50 md:block hidden"></div> {/* Thin white line */}
+
+  <div className="flex-1 flex flex-col items-center">
+  <h3 className="text-3xl font-bold font-sf bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+      {useCountUp(100, 2000, startCount)}%
+    </h3>
+    <p className="text-gray-300 font-sf">Personalization Learning</p>
+  </div>
+</div>
+
+
+ </div>
+
+
+    {/* Form Close */}
+
+    	
+
+
+
+<div className="flex justify-center py-8 items-center">
+  <motion.div
+    initial={{ opacity: 0, y: 50 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.8 }}
+    className="w-full max-w-[500px] md:max-w-[370px] ml-2 md:ml-32"
+  >
+    <form onSubmit={handleSubmit} className="space-y-1 w-full">
+      {/* Name Field */}
+      <input
+        type="text"
+        name="name"
+        value={formData.name}
+        onChange={handleChange}
+        placeholder="Enter Your Name"
+        className="w-full p-2.5 bg-white/30 backdrop-blur-sm border border-white/40 rounded-lg text-white placeholder-white/80 font-sf"
+        required
+      />
+
+      {/* Country Code and Phone Number */}
+      <div className="flex gap-2 items-center">
+        <select
+          name="countryCode"
+          value={formData.countryCode}
+          onChange={handleChange}
+          className="bg-white/30 backdrop-blur-sm border border-white/40 rounded-lg px-2 py-2 text-black font-sf"
+          required
+        >
+          {[
+            { flag: "🇮🇳", code: "+91" },
+            { flag: "🇺🇸", code: "+1" },
+            { flag: "🇬🇧", code: "+44" },
+            { flag: "🇨🇦", code: "+1" },
+            { flag: "🇦🇺", code: "+61" },
+            { flag: "🇩🇪", code: "+49" },
+            { flag: "🇫🇷", code: "+33" },
+            { flag: "🇧🇷", code: "+55" },
+            { flag: "🇯🇵", code: "+81" },
+            { flag: "🇨🇳", code: "+86" }
+          ].map((country, index) => (
+            <option key={index} value={country.code}>
+              {country.flag} {country.code}
+            </option>
+          ))}
+        </select>
+        <input
+          type="tel"
+          name="phone"
+          value={formData.phone}
+          onChange={handleChange}
+          placeholder="Enter Your Phone Number"
+          className="w-full p-2.5 bg-white/30 backdrop-blur-sm border border-white/40 rounded-lg text-white placeholder-white/80 font-sf"
+          required
+        />
+        <button
+          type="button"
+          onClick={handleSendOtp}
+          className="bg-white/30 backdrop-blur-sm border border-white/40 text-white px-4 rounded-lg font-sf"
+        >
+          Send OTP
+        </button>
+      </div>
+
+      {/* OTP Input (Only Renders After OTP is Sent) */}
+      {showOtpField && (
+        <input
+          type="text"
+          name="otp"
+          value={formData.otp}
+          onChange={handleChange}
+          placeholder="Enter OTP Here"
+          className="w-full p-2.5 bg-white/30 backdrop-blur-sm border border-white/40 rounded-lg text-white placeholder-white/80 font-sf"
+          required
+        />
+      )}
+
+      {/* State Selection and IIT/JEE Dropdown */}
+      <div className="flex gap-2">
+        <select
+          name="state"
+          value={formData.state}
+          onChange={handleChange}
+          className="w-1/2 p-2.5 bg-white/30 backdrop-blur-sm border border-white/40 rounded-lg text-black font-sf"
+          required
+        >
+          <option value="">Select Your State</option>
+          {indianStates.map((state, index) => (
+            <option key={index} value={state}>
+              {state}
+            </option>
+          ))}
+        </select>
+
+        <select
+          name="dropdown"
+          value={formData.dropdown}
+          onChange={handleChange}
+          className="w-1/2 p-2.5 px-4 bg-white/30 backdrop-blur-sm border border-white/40 text-black rounded-lg font-sf"
+          required
+        >
+          <option value="" disabled>
+            Select an option
+          </option>
+          <option value="iit/jee">IIT/JEE</option>
+          <option value="neet">NEET</option>
+          <option value="sat">SAT</option>
+          <option value="ipmat">IPMAT</option>
+          <option value="class 12">CLASS 12</option>
+          <option value="class 11">CLASS 11</option>
+          <option value="class 10">CLASS 10</option>
+          <option value="class 9">CLASS 9</option>
+          <option value="class 8">CLASS 8</option>
+          <option value="class 7">CLASS 7</option>
+          <option value="class 6">CLASS 6</option>
+        </select>
+      </div>
+
+      {/* Submit Button */}
+      <button
+        type="submit"
+        className="primary-btn flex items-center gap-2 group w-full justify-center font-sf"
       >
-        <form onSubmit={handleSubmit} className="space-y-2 w-full">
-          <input
-            type="text"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            placeholder="Enter Your Name"
-            className="w-full p-2.5 bg-white/30 backdrop-blur-sm border border-white/40 rounded-lg text-white placeholder-white/80"
-            required
-          />
-          <div className="flex gap-2">
-            <input
-              type="tel"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              placeholder="Enter Your Phone Number"
-              className="w-full p-2.5 bg-white/30 backdrop-blur-sm border border-white/40 rounded-lg text-white placeholder-white/80"
-              required
-            />
-            <button type="button" className="bg-white/30 backdrop-blur-sm border border-white/40 text-white px-4 rounded-lg">
-              Send OTP
-            </button>
-          </div>
-          <div className="flex space-x-4">
-            <input
-              type="otp"
-              name="otp"
-              onChange={handleChange}
-              placeholder="Enter OTP Here"
-             className="w-full p-2.5 bg-white/30 backdrop-blur-sm border border-white/40 rounded-lg text-white placeholder-white/80"
-              required
-            />
-            <select
-              name="dropdown"
-              value={formData.dropdown}
-              onChange={handleChange}
-              className="w-1/2 p-2.5 px-4 bg-white/30 backdrop-blur-sm border border-white/40 text-black rounded-lg"
-              required
-            >
-              <option value="" disabled>
-                Select an option
-              </option>
-              <option value="iit/jee">IIT/JEE</option>
-              <option value="neet">NEET</option>
-              <option value="sat">SAT</option>
-              <option value="ipmat">IPMAT</option>
-              <option value="class 12">CLASS 12</option>
-              <option value="class 11">CLASS 11</option>
-              <option value="class 10">CLASS 10</option>
-              <option value="class 9">CLASS 9</option>
-              <option value="class 8">CLASS 8</option>
-              <option value="class 7">CLASS 7</option>
-              <option value="class 6">CLASS 6</option>
-            </select>
-          </div>
-          <select
-            name="state"
-            value={formData.state}
-            onChange={handleChange}
-           className="w-full p-2.5 bg-white/30 backdrop-blur-sm border border-white/40 rounded-lg text-white placeholder-white/80"
-            required
-          >
-            <option value="">Select Your State</option>
-            {indianStates.map((state, index) => (
-              <option key={index} value={state}>{state}</option>
-            ))}
-          </select>
-          <button type="submit" className="primary-btn flex items-center gap-2 group w-full justify-center">
-            Submit
-            <IoIosArrowRoundForward className="text-xl group-hover:translate-x-2 group-hover:-rotate-45 duration-300" />
-          </button>
-          <br/>
-        </form>
-      </motion.div>
-    </div>
+        Submit
+        <IoIosArrowRoundForward className="text-xl group-hover:translate-x-2 group-hover:-rotate-45 duration-300 font-sf" />
+      </button>
+    </form>
+  </motion.div>
+</div>
+
+
+
         </div>
       </div>
     </section>

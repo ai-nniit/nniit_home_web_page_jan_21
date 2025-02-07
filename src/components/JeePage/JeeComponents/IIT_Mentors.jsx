@@ -7,7 +7,7 @@ import IIT_Madras from '../../../assets/IIT_Madras_Logo.webp';
 
 const IITSection = () => {
   return (
-    <section className="py-8 bg-white">
+    <section className="py-8 bg-[#f5f5f7]">
       <h2 className="text-center text-2xl md:text-3xl font-semibold mb-6">
         Consult Online <span className="text-orange-600">IITians</span> From
       </h2>

@@ -11,7 +11,7 @@ import Footer from "./components/Footer/Footer";
 import FreeDemoComponent from "./components/Carousel/Carousel";
 import ExampleUsage1 from "./components/ImpactAtScale/ExampleUsage";
 import ReviewSection from "./components/ReviewSection/ReviewSection";
-import StudyMaterialFooter from "./components/StudyMaterialFooter/StudyMaterialFooter";
+import StudyMaterialFooter from "./components/StudyMaterialFooter/StudyMaterialFooter"; 
 import FAQ from "./components/FAQ/FAQ";
 import TestimonialSlider from "./components/Testimonials/TestimonialSlider";
 import DivComponent from "./components/Testimonials/DivComponent";
@@ -26,6 +26,7 @@ import SlideContent from "./components/Testimonials1/Testimonials1";
 import ClaimYourSpot from "./components/ClaimYourSpot/ClaimYourSpot";
 import CompanyShowcase from "./components/Testimonials1/Testimonials2";
 import CompanyShowcase1 from "./components/Testimonials1/Testimonials2";
+import InspiredResults from "./components/Rankers/InspiredResults";
 
 //import IITJEEPage from "./pages/IITJEEPage"; // Import the IIT JEE page component
 
@@ -36,6 +37,10 @@ const HomePage = () => {
     <Hero />
     <InvestorLogoBar />
     {/* GoogleForIndia2024 is visible only on desktop */}
+    <br/>
+    <br/>
+    <br/>
+    <br/>
       <GoogleForIndia2024 />
       <div className=" px-6 justify-center block md:hidden">
       <LearnersBadge />
@@ -53,16 +58,19 @@ const HomePage = () => {
     <div className="hidden md:block">
     <ExamCarousel />
      </div>
+     <div className="hidden md:block">
+      <InspiredResults/>
+     </div>
     <div className="block md:hidden">
     <VideoCard/>
     </div>
     {/* <EducationFeatures /> */}
-    <div className="block md:hidden">
+    {/* <div className="block md:hidden">
     <ScrollLockedFeatureSection/>
-    </div>
-    <div className="hidden sm:block">
+    </div> */}
+    {/* <div className="hidden sm:block"> */}
       <DesktopFeatureSection/>
-    </div>
+    {/* </div> */}
     {/* <ExampleUsage1 /> */}
     <ResultsSection/>
     <ReviewSection />
