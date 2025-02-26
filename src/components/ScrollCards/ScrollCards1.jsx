@@ -78,22 +78,28 @@ const DesktopFeatureSection = () => {
 
       {/* Scrollable Cards Container */}
       <div
-        ref={scrollContainerRef}
-        className="flex overflow-x-auto space-x-2 md:px-28 px-0 py-2 scroll-smooth scrollbar-hide"
-        style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-      >
-        {images.map((image, index) => (
-          <div
-            key={index}
-            className={`flex-shrink-0 h-[370px] ${image === card2 ? "w-[300px]" : "w-[330px]"} rounded-3xl shadow-md overflow-hidden`}
-          >
-            <div
-              className="h-full w-full bg-cover bg-center rounded-2xl"
-              style={{ backgroundImage: `url(${image})` }}
-            ></div>
-          </div>
-        ))}
-      </div>
+  ref={scrollContainerRef}
+  className="flex overflow-x-auto space-x-2 px-0 py-0 md:px-2 md:py-2 scroll-smooth scrollbar-hide"
+  style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+>
+  {images.map((image, index) => (
+    <div
+      key={index}
+      className={`flex-shrink-0 h-[370px] ${
+        image === card2 ? "w-[300px]" : "w-[350px]"
+      } rounded-3xl shadow-md overflow-hidden ${
+        index === 0 ? "mr-auto md:ml-32" : ""
+      }`}
+    >
+      <div
+        className="h-full w-full bg-cover bg-center rounded-2xl"
+        style={{ backgroundImage: `url(${image})` }}
+      ></div>
+    </div>
+  ))}
+</div>
+
+
 
       {/* Right Scroll Button */}
       <button

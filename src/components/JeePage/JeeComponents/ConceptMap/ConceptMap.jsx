@@ -534,7 +534,7 @@ const NetworkGraph = () => {
     return () => {
       d3.select(".network-graph-tooltip").remove();
     };
-  }, [dimensions]); // Re-render when dimensions change
+  }, [dimensions]); // Re-render when dimensions change 
 
   return (
     <div className="relative w-full h-full min-h-[400px]">

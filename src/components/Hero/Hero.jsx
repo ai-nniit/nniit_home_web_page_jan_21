@@ -294,6 +294,7 @@ import { motion } from "framer-motion";
 import { FaGraduationCap, FaMicroscope } from "react-icons/fa";
 import ai_video from "../../assets/videoplayblack.mp4";
 import { IoIosArrowRoundForward } from "react-icons/io";
+import { useNavigate } from "react-router-dom";
 
 
 const indianStates = [
@@ -438,6 +439,14 @@ const Hero = () => {
     }));
   };
 
+  const navigate = useNavigate(); // Hook for navigation
+
+  const handleNavigation = (path) => {
+   //navigate(path, { replace: true }); // Navigate without full page reload
+   window.open(path, "_blank");
+  };
+
+
   const handleSubmit = (e) => {
     e.preventDefault();
     // Add form submission logic here
@@ -495,38 +504,38 @@ const Hero = () => {
 
 
             {/*Buttons*/}
-
             <div className="flex justify-center gap-2 md:gap-4 mt-12 overflow-hidden whitespace-nowrap">
-  {[
-    { label: "IIT JEE", icon: <FaGraduationCap className="ml-2 text-lg" /> },
-    { label: "NEET", icon: <FaMicroscope className="ml-2 text-lg" /> },
-    { label: "Explore", icon: <FiZap className="ml-2 text-lg" /> },
-  ].map((button, index) => (
-    <div key={index} className="relative w-[100px] h-[35px] md:w-[180px] md:h-[45px] group">
-      <div
-        className="absolute inset-0 rounded-[30px] bg-gradient-to-r from-cyan-400 via-yellow-300 to-orange-400
-          opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm group-hover:animate-pulse"
-      ></div>
-      <img
-        src="/gradient1208-3p8p-200h.png"
-        alt="gradient"
-        className="absolute top-0 left-0 w-full h-full rounded-[30px]"
-      />
-      <motion.button
-        className="absolute top-0 left-0 w-full h-full flex items-center justify-center rounded-[30px] bg-white/50 backdrop-blur-lg 
-          group-hover:scale-[1.02] transition-transform duration-300 text-white text-[10px] md:text-[20px] font-bold font-sf leading-6"
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
-      >
-        {button.label} {button.icon}
-      </motion.button>
+      {[
+        { label: "IIT JEE", icon: <FaGraduationCap className="ml-2 text-lg" />, path: "/courses/jee" },
+        { label: "NEET", icon: <FaMicroscope className="ml-2 text-lg" />, path: "/courses/neet" },
+        { label: "Explore", icon: <FiZap className="ml-2 text-lg" />, path: "/explore" },
+      ].map((button, index) => (
+        <div key={index} className="relative w-[100px] h-[35px] md:w-[180px] md:h-[45px] group">
+          <div
+            className="absolute inset-0 rounded-[30px] bg-gradient-to-r from-cyan-400 via-yellow-300 to-orange-400
+              opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm group-hover:animate-pulse"
+          ></div>
+          <img
+            src="/gradient1208-3p8p-200h.png"
+            alt="gradient"
+            className="absolute top-0 left-0 w-full h-full rounded-[30px]"
+          />
+          <motion.button
+            className="absolute top-0 left-0 w-full h-full flex items-center justify-center rounded-[30px] bg-white/50 backdrop-blur-lg 
+              group-hover:scale-[1.02] transition-transform duration-300 text-white text-[10px] md:text-[20px] font-bold font-sf leading-6"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={() => handleNavigation(button.path)} // Navigate when clicked
+          >
+            {button.label} {button.icon}
+          </motion.button>
+        </div>
+      ))}
     </div>
-  ))}
-</div>
-
+           
 
             {/* Statistics Section */}
-            <div ref={statsRef} className="flex flex-wrap gap-4 mt-12 text-center">
+            <div ref={statsRef} className="flex flex-wrap gap-4 mt-12 text-center p-0.5">
   <div className="flex-1 flex flex-col items-center">
   <h3 className="text-3xl font-bold font-sf bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
       {useCountUp(100000, 2000, startCount).toLocaleString()}+
@@ -564,7 +573,7 @@ const Hero = () => {
 
 
 
-<div className="flex justify-center py-8 items-center">
+<div className="flex justify-center py-8 items-center -mt-5">
   <motion.div
     initial={{ opacity: 0, y: 50 }}
     animate={{ opacity: 1, y: 0 }}
@@ -614,7 +623,7 @@ const Hero = () => {
           name="phone"
           value={formData.phone}
           onChange={handleChange}
-          placeholder="Enter Your Phone Number"
+          placeholder="Phone Number"
           className="w-full p-2.5 bg-white/30 backdrop-blur-sm border border-white/40 rounded-lg text-white placeholder-white/80 font-sf"
           required
         />

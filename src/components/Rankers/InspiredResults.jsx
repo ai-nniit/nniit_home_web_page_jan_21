@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import student from '../../assets/Students.webp';
+import student from '../../assets/Students.png';
 import allImage from '../../assets/all.png';
 import iitjeeImage from '../../assets/iitjee.png';
 import neetImage from '../../assets/neet.png';
@@ -30,7 +30,7 @@ export default function InspiredResults() {
       </div>
 
       {/* Category Filters */}
-      <div className="flex justify-center gap-1 mt-5 mr-64 flex-wrap">
+      <div className="flex justify-center gap-1 mt-1 mr-64 flex-wrap">
         {categories.map((category, index) => (
           <button
             key={index}

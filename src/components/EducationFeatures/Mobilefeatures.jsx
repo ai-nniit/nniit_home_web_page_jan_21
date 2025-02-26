@@ -27,10 +27,10 @@ const MobileMenu = () => {
         
         <div
           key={index}
-          className="flex items-center justify-between p-1 border rounded-lg bg-white shadow-none hover:border-blue-500 transition-colors cursor-pointer"
+          className="flex items-center justify-between p-2.5 border rounded-lg bg-white shadow-none hover:border-blue-500 transition-colors cursor-pointer"
         >
           <div className="flex items-center gap-1">
-            <img src={item.icon} alt={item.name} className="w-6 h-6" />
+            <img src={item.icon} alt={item.name} className="w-5 h-5" />
             <span className="text-sm font-medium">{item.name}</span>
           </div>
           <span className="text-gray-500">
@@ -42,10 +42,13 @@ const MobileMenu = () => {
         
       ))}
     </div>
-    <div className=''>
-            <button className='border-2 px-10 py-2  text-white   ml-20 bg-[#07bd80] rounded-md'>View Subscription Plan</button>
-            <button className='border-2 px-16 py-2 font-semibold ml-20 mt-2 bg-white rounded-md'>Explore for Free</button>
+    <div className='justify-center'>
+            <button className='border-2 px-10 py-2  text-white   ml-14  bg-[#07bd80] rounded-md'>View Subscription Plan</button>
+            <button className='border-2 px-16 py-2 font-semibold ml-14 mt-2 bg-white rounded-md'>Explore for Free</button>
           </div>
+
+
+
     </>
   );
 };

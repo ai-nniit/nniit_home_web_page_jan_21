@@ -78,11 +78,11 @@ const ResultsSection = () => {
           <div className="absolute left-0 top-0 h-full border-l border-gray-300">
             <div className="bg-gray-700 w-0.5 h-8"></div>
           </div>
-          <span className="inline-block font-sf bg-purple-200 text-purple-700 text-sm px-4 py-1 rounded-full mb-4">
+          <span className="inline-block font-sf bg-purple-200 text-purple-700 text-[16px] px-4 py-1 rounded-full mb-4">
           Global Reach
           </span>
-          <h3 className="text-3xl font-bold font-sf"><Counter target={57} />+ Countries</h3>
-          <p className="text-gray-600 mt-2 px-3 font-sf">
+          <h3 className="text-3xl font-bold font-sf"><Counter target={59} />+ Countries</h3>
+          <p className="text-gray-600 mt-2 px-3 font-sf text-xs">
           Empowering learners worldwide with personalized, flexible, and high-impact live classes.
           </p>
         </div>
@@ -90,11 +90,11 @@ const ResultsSection = () => {
           <div className="absolute left-0 top-0 h-full border-l border-gray-300">
             <div className="bg-gray-700 w-0.5 h-8"></div>
           </div>
-          <span className="inline-block bg-orange-200 text-orange-700 text-sm px-4 py-1 rounded-full mb-4 font-sf">
+          <span className="inline-block bg-orange-200 text-orange-700 text-[16px] px-4 py-1 rounded-full mb-4 font-sf">
           Live Learning Hours
           </span>
-          <h3 className="text-2xl font-bold font-sf"><Counter target={2.1} />+ Crore Hours</h3>
-          <p className="text-gray-600 mt-2 px-3 font-sf">
+          <h3 className="text-2xl font-bold font-sf"><Counter target={3.1} />+ Crore Hours</h3>
+          <p className="text-gray-600 mt-2 px-3 font-sf text-xs">
           Delivering extensive, high-quality, and interactive one-on-one learning experiences across the globe.
           </p>
         </div>
@@ -102,11 +102,11 @@ const ResultsSection = () => {
           <div className="absolute left-0 top-0 h-full border-l border-gray-300">
             <div className="bg-gray-700 w-0.5 h-8"></div>
           </div>
-          <span className="inline-block bg-green-200 text-green-700 text-sm px-4 py-1 rounded-full mb-4 font-sf">
+          <span className="inline-block bg-green-200 text-green-700 text-[16px] px-4 py-1 rounded-full mb-4 font-sf">
           Doubts Resolved
           </span>
-          <h3 className="text-2xl font-bold font-sf"><Counter target={25} />+ Lakh Doubts Answered</h3>
-          <p className="text-gray-600 mt-2 font-sf">
+          <h3 className="text-2xl font-bold font-sf"><Counter target={3} />M+ Doubts Answered</h3>
+          <p className="text-gray-600 mt-2 font-sf text-xs">
           Ensuring clarity and deeper understanding by resolving every student's queries instantly through our app.
           </p>
         </div>

@@ -13,7 +13,7 @@ import doubts from '../../assets/doubts.png';
 
 
 const FeatureCard = ({ icon, title, description, color }) => (
-  <div className="group flex items-start gap-2 p-5 rounded-xl border border-gray-200 hover:border-gray-300 transition-all cursor-pointer">
+  <div className="group flex items-start gap-2 p-4 rounded-xl border border-gray-200 hover:border-gray-300 transition-all cursor-pointer">
     <div className={`flex-shrink-0 w-5 h-7 rounded-lg ${color} flex items-center justify-center`}>
       {icon}
     </div>
@@ -44,7 +44,7 @@ const MobileFeatureCard = ({ icon, title, color }) => (
   </div>
 );
 
-const EducationFeatures = () => {
+const EducationFeatures = ( {examName} ) => {
   const isMobile = useMediaQuery({ maxWidth: 768 });
 
   const features = [
@@ -105,7 +105,7 @@ const EducationFeatures = () => {
     {/* <!-- Upper Div --> */}
     <div class="mb-4">
       <h1 class="text-4xl font-semibold font-sf  ml-2 md:ml-20  text-[#3c4853]">
-        Crack IIT JEE  with  NNIIT
+        Crack {examName}  with  NNIIT
       </h1>
     </div>
     {/* <!-- Lower Div --> */}
@@ -141,7 +141,7 @@ const EducationFeatures = () => {
         </>
           
         ) : (
-          <div className="grid grid-cols-4 gap-3 mt-3 max-w-6xl mx-auto">
+          <div className="grid grid-cols-4 gap-1 mt-3 max-w-6xl mx-auto">
             {features.slice(0, 8).map((feature, idx) => (
               <FeatureCard key={idx} {...feature} />
             ))}

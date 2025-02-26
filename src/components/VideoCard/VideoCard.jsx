@@ -1,54 +1,26 @@
 import React, { useState } from 'react';
-import pw from '../../assets/pw.jpg';
-import msunion from '../../assets/msunion.jpg';
+import tut1 from '../../assets/Tutors/Tut1.png';
+import tut2 from '../../assets/Tutors/Tut2.png';
+import tut3 from '../../assets/Tutors/Tut3.png';
+
+import tut11 from '../../assets/Tutors/Tut11.png';
+import tut12 from '../../assets/Tutors/Tut12.png';
+import tut13 from '../../assets/Tutors/Tut13.png';
 
 const categories = ['JEE', 'NEET', 'IPMAT', 'SAT', 'Class-12', 'Class-11', 'Class-10', 'Class-9', 'Class-8', 'Class-7', 'Class-6'];
-
-const categories1 = ['Courses', 'StudyMaterial']
-
-const videos1 = {
-    Courses: [
-        {
-            title: 'JEE Advanced Preparation',
-            description: 'Top Strategies to Crack JEE Advanced with Ease.',
-            thumbnail: pw,
-            videoUrl: 'https://www.youtube.com/embed/2Ot52xaPPik',
-        },
-        {
-            title: 'JEE Mains Guide',
-            description: 'Step-by-Step Guide to Master JEE Mains.',
-            thumbnail: msunion,
-            videoUrl: 'https://www.youtube.com/watch?v=2Ot52xaPPik&pp=ygUEamVlIA%3D%3D',
-        },
-    ], 
-    StudyMaterial: [
-        {
-            title: 'JEE Advanced Preparation',
-            description: 'Top Strategies to Crack JEE Advanced with Ease.',
-            thumbnail: pw,
-            videoUrl: 'https://www.youtube.com/embed/2Ot52xaPPik',
-          },
-          {
-            title: 'JEE Mains Guide',
-            description: 'Step-by-Step Guide to Master JEE Mains.',
-            thumbnail: msunion,
-            videoUrl: 'https://www.youtube.com/watch?v=2Ot52xaPPik&pp=ygUEamVlIA%3D%3D',
-          },
-    ]
-}
 
 const videos = {
   JEE: [
     {
       title: 'JEE Advanced Preparation',
       description: 'Top Strategies to Crack JEE Advanced with Ease.',
-      thumbnail: pw,
+      thumbnail: tut2,
       videoUrl: 'https://www.youtube.com/embed/2Ot52xaPPik',
     },
     {
       title: 'JEE Mains Guide',
       description: 'Step-by-Step Guide to Master JEE Mains.',
-      thumbnail: msunion,
+      thumbnail: tut11,
       videoUrl: 'https://www.youtube.com/watch?v=2Ot52xaPPik&pp=ygUEamVlIA%3D%3D',
     },
   ],
@@ -56,7 +28,7 @@ const videos = {
     {
       title: 'NEET 2024 Preparation',
       description: 'Tips for Medical Aspirants to Ace NEET 2024.',
-      thumbnail: pw,
+      thumbnail: tut1,
       videoUrl: 'https://www.youtube.com/embed/2Ot52xaPPik',
     },
   ],
@@ -64,7 +36,7 @@ const videos = {
     {
       title: 'IPMAT Success Stories',
       description: 'How Students Cleared IPMAT with Strategic Planning.',
-      thumbnail: pw,
+      thumbnail: tut3,
       videoUrl: 'https://www.youtube.com/embed/2Ot52xaPPik',
     },
   ],
@@ -72,7 +44,7 @@ const videos = {
     {
       title: 'Crack SAT with These Tips',
       description: 'Effective Methods to Prepare for the SAT Exam.',
-      thumbnail: pw,
+      thumbnail: tut13,
       videoUrl: 'https://www.youtube.com/embed/2Ot52xaPPik',
     },
   ],
@@ -80,7 +52,7 @@ const videos = {
     {
       title: 'Class 12 Exam Preparation',
       description: 'Comprehensive Guide to Excelling in Class 12 Exams.',
-      thumbnail: pw,
+      thumbnail: tut1,
       videoUrl: 'https://www.youtube.com/embed/2Ot52xaPPik',
     },
   ],
@@ -88,7 +60,7 @@ const videos = {
     {
       title: 'Class 11 Science Overview',
       description: 'Key Topics and Tips for Class 11 Science Students.',
-      thumbnail: msunion,
+      thumbnail: tut12,
       videoUrl: 'https://www.youtube.com/embed/2Ot52xaPPik',
     },
   ],
@@ -96,7 +68,7 @@ const videos = {
     {
       title: 'Class 10 Board Exam Tips',
       description: 'Prepare Effectively for Class 10 Board Exams.',
-      thumbnail: pw,
+      thumbnail: tut2,
       videoUrl: 'https://www.youtube.com/embed/2Ot52xaPPik',
     },
   ],
@@ -104,7 +76,7 @@ const videos = {
     {
       title: 'Class 9 Study Plan',
       description: 'Organized Approach to Excel in Class 9.',
-      thumbnail: msunion,
+      thumbnail: tut3,
       videoUrl: 'https://www.youtube.com/embed/2Ot52xaPPik',
     },
   ],
@@ -112,7 +84,7 @@ const videos = {
     {
       title: 'Class 8 Learning Techniques',
       description: 'Develop a Strong Foundation in Class 8.',
-      thumbnail: pw,
+      thumbnail: tut13,
       videoUrl: 'https://www.youtube.com/embed/2Ot52xaPPik',
     },
   ],
@@ -120,7 +92,7 @@ const videos = {
     {
       title: 'Class 7 Fun Learning',
       description: 'Interactive Ways to Study in Class 7.',
-      thumbnail: msunion,
+      thumbnail: tut12,
       videoUrl: 'https://www.youtube.com/embed/2Ot52xaPPik',
     },
   ],
@@ -128,7 +100,7 @@ const videos = {
     {
       title: 'Class 6 Basics',
       description: 'Essential Concepts for Class 6 Students.',
-      thumbnail: pw,
+      thumbnail: tut11,
       videoUrl: 'https://www.youtube.com/embed/2Ot52xaPPik',
     },
   ],
@@ -150,7 +122,7 @@ const VideoCard = () => {
   };
 
   return (
-    <div className="relative min-h-64 p-1 bg-white text-black overflow-hidden">
+    <div className="relative min-h-64 -mt-16 p-1 bg-white text-black overflow-hidden">
       {/* Inline SVG Grid Background */}
       <svg
         width="100%"

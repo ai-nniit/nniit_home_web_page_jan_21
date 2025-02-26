@@ -184,11 +184,12 @@ import exp1 from "../../assets/expert5.png";
 import exp2 from "../../assets/expert2.png";
 import exp3 from "../../assets/Neet_exp1.png";
 import exp4 from "../../assets/Neet_exp2.png";
-import iitkaragpur from "../../assets/IIT_Kharagpur.png";
+import iitkaragpur from "../../assets/IIT_Kharagpur3.png";
 import iitbombay from "../../assets/IIT_Bombay.png";
 import backgroundImg from "../../assets/slide_content_background.png";
 import aiims from "../../assets/AIIMS_Delhi.png";
-import pgimer from "../../assets/PGIMER_Logo.png";
+import pgimer from "../../assets/PGIMERC.png";
+import iitdelhi from '../../assets/IIT_Delhi.png'
 
 const CompanyShowcase1 = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -219,7 +220,7 @@ const CompanyShowcase1 = () => {
       text: "“Cracking IIT requires smart learning. NNIIT’s one-on-one guidance and tailored approach eliminate distractions and boost results. For serious JEE aspirants, NNIIT is a game-changer!”",
       author: "Ajeesh Onamkuttan",
       position: "Department of MECH, IIT Delhi",
-      slideimg: iitkaragpur,
+      slideimg: iitdelhi,
       iitname: "IIT Delhi",
     },
     {
@@ -282,7 +283,7 @@ const CompanyShowcase1 = () => {
           key={companies[activeIndex].text}
           initial={{ x: 100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.5 }} 
           className="w-full md:w-1/2 z-10"
         >
           <p className="text-sm uppercase tracking-wide mt-28">IIT-JEE/NEET Experts</p>
@@ -295,7 +296,7 @@ const CompanyShowcase1 = () => {
       <div className="mt-1 mb-4 border-t border-gray-700 relative z-10"></div>
 
       <div className="relative z-10">
-        <div className="relative py-8 -mt-10">
+        <div className="relative py-8 -mt-14">
           <div
             className="flex space-x-8 items-center overflow-x-auto scrollbar-hidden"
             style={{ scrollBehavior: "smooth" }}

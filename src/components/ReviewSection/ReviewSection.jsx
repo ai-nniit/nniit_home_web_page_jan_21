@@ -2,6 +2,10 @@ import React, { useRef, useState, useEffect } from 'react';
 import ReviewCard from './ReviewCard';
 import backgroundImage from '../../assets/gradient1.jpg'; // Import the background image
 import double from '../../assets/doubleface.png';
+import a1 from '../../assets/a1.png'
+import a2 from '../../assets/a2.png';
+import a3 from '../../assets/a3.png';
+import a4 from '../../assets/a4.png';
 
 const reviews = [
   {
@@ -10,17 +14,17 @@ const reviews = [
     reviewer: {
       name: 'Rajesh Sharma',
       role: 'Manager at Infosys',
-      avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=150',
+      avatar: a1,
     },
   },
   {
     title: 'OUR TOP REVIEWS',
     text: "We’re so thankful to NNIIT for all the support they’ve given our daughter. The personalized tutoring and the ability for her to learn at her own pace has made a huge difference.",
-    rating: 4.5,
+    rating: 4.9,
     reviewer: {
       name: 'Saurabh Tiwari, Pooja Tiwari ',
       role: 'Product Manager at Apple & Marketing Specialist at Microsoft',
-      avatar: double,
+      avatar: a4,
     },
     variant: 'image', // Use 'image' variant for the second card
   },
@@ -30,7 +34,7 @@ const reviews = [
     reviewer: {
       name: 'Chaitanya Krishna',
       role: '11th SSC',
-      avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=150',
+      avatar: a3,
     },
   },
   {
@@ -39,7 +43,7 @@ const reviews = [
     reviewer: {
       name: 'Anusha Priya',
       role: 'XII ICSE',
-      avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=150',
+      avatar: a2,
     },
   },
   {
@@ -47,8 +51,8 @@ const reviews = [
     text: "Whether for IIT JEE, NEET, or any exam, the personal coaching made everything clear and easy to understand!",
     rating: 4.9,
     reviewer: {
-      name: 'Ishitha Gupta',
-      role: '11th CBSE',
+      name: 'Ishan Gupta & Usha Gupta',
+      role: '',
       avatar: double,
     },
     variant: 'image', // Use 'image' variant for the second card
@@ -118,7 +122,8 @@ export default function ReviewSection() {
         #Wall Of Love
       </h3>
     </header>
-    <div className="py-2 -px-1 md:px-4 md:m-10 mx-auto">
+
+    <div className="py-2 md:px-10 px-4 md:m-10 ">
       <div
         ref={scrollRef}
         className="flex gap-2 overflow-x-auto pb-8 scrollbar-hide"
@@ -147,12 +152,13 @@ export default function ReviewSection() {
         })}
       </div>
   
-      <div className="flex justify-center mt-4">
+      <div className="flex justify-center mt-1 mb-4">
         <p className="text-sm text-gray-400">
           {currentIndex} / {totalItems}
         </p>
       </div>
     </div>
+
   </div>
   
   );

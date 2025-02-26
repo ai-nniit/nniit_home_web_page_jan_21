@@ -29,7 +29,7 @@ const DelayedFormPopup = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsVisible(true);
-    }, 5000);
+    }, 20000);
 
     return () => clearTimeout(timer);
   }, []);
@@ -56,7 +56,7 @@ const DelayedFormPopup = () => {
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-      <div className="bg-white rounded-lg p-6 w-full max-w-md relative animate-fadeIn">
+      <div className="bg-white rounded-lg p-6 w-[360px] max-w-md relative animate-fadeIn">
         <button
           onClick={handleClose}
           className="absolute right-4 top-4 text-gray-500 hover:text-gray-700"
@@ -64,15 +64,15 @@ const DelayedFormPopup = () => {
           <X size={24} />
         </button>
 
-        <h2 className="text-2xl font-bold mb-4 text-center">Welcome!</h2>
-        <p className="mb-4 text-gray-600 text-center">Please take a moment to fill out this form.</p>
+        <h2 className="text-2xl font-bold mb-1 text-center">Welcome!</h2>
+        <p className="mb-3 text-gray-600 text-center">Please take a moment to fill out this form.</p>
 
         <div className="flex justify-center items-center">
           <motion.div
             variants={{ initial: { opacity: 0 }, animate: { opacity: 1 } }}
             initial="initial"
             animate="animate"
-            className="w-full max-w-[500px] md:max-w-[400px]"
+            className="w-full max-w-[400px] md:max-w-[400px]"
           >
             <form onSubmit={handleSubmit} className="space-y-2 w-full">
               <input
@@ -81,38 +81,40 @@ const DelayedFormPopup = () => {
                 value={formData.name}
                 onChange={handleChange}
                 placeholder="Enter Your Name"
-                className="w-full p-2.5 border rounded-lg"
+                className="w-full p-1.5 border rounded-lg"
                 required
               />
               <div className="flex gap-2">
-                <input
-                  type="tel"
-                  name="phone"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  placeholder="Enter Your Phone Number"
-                  className="flex-grow p-2.5 border rounded-lg"
-                  required
-                />
-                <button type="button" className="bg-secondary text-white px-4 rounded-lg">
-                  Send OTP
-                </button>
+                      <input
+                        type="tel"
+                        name="phone"
+                        value={formData.phone}
+                        onChange={handleChange}
+                        placeholder="Enter Phone Number"
+                        className="w-[200px] p-1.5 border rounded-lg"
+                        required
+                      />
+                      <button type="button" className="bg-secondary text-white w-[150px] py-2 rounded-lg">
+                        Send OTP
+                      </button>
               </div>
+
+
               <div className="flex space-x-4">
                 <input
                   type="text" // Change to text from otp
                   name="otp"
                   value={formData.otp}
                   onChange={handleChange}
-                  placeholder="Enter OTP Here"
-                  className="w-1/2 p-2.5 border rounded-lg"
+                  placeholder="Enter OTP"
+                  className="w-[125px] p-1.5 border rounded-lg "
                   required
                 />
                 <select
                   name="dropdown"
                   value={formData.dropdown}
                   onChange={handleChange}
-                  className="w-1/2 p-2.5 px-4 border rounded-lg"
+                  className="w-[250px] p-1.5 px-3 border rounded-lg"
                   required
                 >
                   <option value="" disabled>Select an option</option>
@@ -133,7 +135,7 @@ const DelayedFormPopup = () => {
                 name="state"
                 value={formData.state}
                 onChange={handleChange}
-                className="w-full p-2.5 border rounded-lg"
+                className="w-full p-1.5 border rounded-lg"
                 required
               >
                 <option value="">Select Your State</option>

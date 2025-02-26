@@ -9,8 +9,7 @@ import VIPKidMethod from './JeeComponents/StudentLearningJourney';
 import TimelineComponent from './JeeComponents/StudentLearningJourney';
 import StudentLearningJourney from './JeeComponents/StudentLearningJourney';
 import NetworkGraph from './JeeComponents/ConceptMap/ConceptMap';
-import Features from './JeeComponents/Features';
-
+import Features from './JeeComponents/Features'; 
 
 import React from 'react';
 import DelayedFormPopup from '../DelayedComponent/DelayedComponent';
@@ -31,6 +30,8 @@ import App from './JeeComponents/PersonalizedSprint/PersonalizedApp';
 import CompetitorAnalysis from './JeeComponents/Topper_Section';
 import App1 from './JeeComponents/ConceptMap1/App';
 import SecondaryNavbar from './JeeComponents/SecondNavbar';
+import JeeFAQ from './JeeComponents/JeeFAQ';
+import MobileFeatureSection from '../ScrollCards/ScrollCards2';
 
 const IITJEEPage = () => {
   return (
@@ -44,10 +45,10 @@ const IITJEEPage = () => {
       <br/>
       {/* <Features/> */}
 
-      <EducationFeatures/>
+      <EducationFeatures examName={"IIT JEE"}/>
       <br/>
       <br/>
-      <section id='guidence'> <IITSection/>  </section>
+      <section id='guidance'> <IITSection/>  </section>
       <br/>
       <br/>
       <br/>
@@ -67,42 +68,45 @@ const IITJEEPage = () => {
 
 
     <section id='concept-mapping'>
-    <div className="container mx-auto px-4 py-8">
-        <div className="bg-white rounded-lg shadow-lg p-4">
+    <div className="container mx-auto px-2 py-4">
+        <div className="bg-white rounded-md shadow-lg p-4">
           <App1/>
         </div>
       </div>
     </section>
       
-    <section id='custom-curriculum'> <Carousel/> </section>
+    <section id='custom-curriculum'> 
+    <Carousel/> 
+    </section>
      
       <section id="personalized-sprint" className="my-0">
       {/* <FreeDemoComponent/> */}
       <App/>
       </section>
       
-    <div className="block md:hidden">
-    <ScrollLockedFeatureSection/>
-    {/* <TimelineComponent/> */}
-    {/* <StudentLearningJourney/> */}
+   <section id='features' className='my-0'> 
+    
+   <div className="block md:hidden">
+    {/* <ScrollLockedFeatureSection/> */}
+    <MobileFeatureSection/>
     </div>
+    
+     </section> 
     
     {/* <PersonalizedSprint/> */}
     
       <section id="educators" className="my-0">
-      <ScholarshipBanner/>
-        
-        
-        <br/>
-        {/* <InteractiveEducationalPlatform/> */}
+      {/* <ScholarshipBanner/> */}
+      {/* <InteractiveEducationalPlatform/> */}
       </section>
       
-      <section id="success-stories" className="md:-mt-24">
+      <section id="refer-and-win" className="md:-mt-2">
         <ReferralBanner/>
       </section>
-      <CompetitorAnalysis/>
+     <section id='competitor-analysis'> <CompetitorAnalysis/> </section> 
       <section id="about-exam" className="my-0">
-      <FAQ />
+      {/* <FAQ /> */}
+      <JeeFAQ/>
       </section>
       <Footer/>
       <StudyMaterialFooter />

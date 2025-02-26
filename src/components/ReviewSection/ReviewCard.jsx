@@ -39,7 +39,7 @@ export default function ReviewCard({
           className={`w-4 h-4 ${
             i < Math.floor(rating)
               ? 'text-yellow-400 fill-yellow-400'
-              : 'text-gray-200'
+              : 'text-yellow-400 fill-yellow-400'
           }`}
         />
       ))}
@@ -49,7 +49,7 @@ export default function ReviewCard({
     </div>
   )}
 
-  <div className="flex items-center mt-10 font-sf gap-3">
+  <div className="flex items-center mt-8 font-sf gap-3">
     <img
       src={reviewer.avatar}
       alt={reviewer.name}

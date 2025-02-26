@@ -27,6 +27,10 @@ import ClaimYourSpot from "./components/ClaimYourSpot/ClaimYourSpot";
 import CompanyShowcase from "./components/Testimonials1/Testimonials2";
 import CompanyShowcase1 from "./components/Testimonials1/Testimonials2";
 import InspiredResults from "./components/Rankers/InspiredResults";
+import BlogApp from "./components/NniitBlogPage/BlogApp";
+import MobileFeatureSection from "./components/ScrollCards/ScrollCards2";
+import NeetHomePage from "./components/NeetPage/NeetHomePage";
+//import BlogApp from "./components/NniitBlogPage/blog-design/src/App";
 
 //import IITJEEPage from "./pages/IITJEEPage"; // Import the IIT JEE page component
 
@@ -42,7 +46,7 @@ const HomePage = () => {
     <br/>
     <br/>
       <GoogleForIndia2024 />
-      <div className=" px-6 justify-center block md:hidden">
+      <div className=" px-8 -mt-5 justify-center block md:hidden">
       <LearnersBadge />
     </div>
     {/* VideoCard is visible only on mobile */}
@@ -52,7 +56,11 @@ const HomePage = () => {
     <FreeDemoComponent />
     </div>
     <div className="block md:hidden">
+      
       <ClaimYourSpot/>
+      <br/>
+      <br/>
+      <br/>
     </div>
     
     <div className="hidden md:block">
@@ -69,7 +77,12 @@ const HomePage = () => {
     <ScrollLockedFeatureSection/>
     </div> */}
     {/* <div className="hidden sm:block"> */}
+    <div className="hidden md:block">
       <DesktopFeatureSection/>
+    </div>
+    <div className="block md:hidden">
+      <MobileFeatureSection/>
+    </div>
     {/* </div> */}
     {/* <ExampleUsage1 /> */}
     <ResultsSection/>
@@ -97,7 +110,9 @@ const App = () => {
       <Routes>
         <Route path="/" element={<HomePage />} /> {/* Home page route */}
         <Route path="/courses/jee" element={<IITJEEPage/>} /> 
+        <Route path="/nniitblogpage/blog" element={ <BlogApp/> }/>
         {/* Add more routes as needed */}
+        <Route path="/courses/neet" element={<NeetHomePage/>}/>
       </Routes>
     </Router>
   );

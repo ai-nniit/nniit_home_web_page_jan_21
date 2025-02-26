@@ -1,16 +1,17 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import slide1 from '../../../assets/slide1.png';
-import slide2 from '../../../assets/slide2.jpg';
-import slide3 from '../../../assets/slide3.jpg';
+import slide1 from '../../../assets/slide4.png';
+import slide2 from '../../../assets/slide2.png';
+import slide3 from '../../../assets/slide3.png';
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import iit_mobile from '../../../assets/iit_mobile_banner_unacad.webp';
-import iit_mobile1 from '../../../assets/iit_mobile_banner2_unacad.webp';
+import iit_mobile from '../../../assets/slide4.png';
+import iit_mobile1 from '../../../assets/slide3.png';
+import iit_mobile2 from '../../../assets/slide2.png';
 
 const banners = [
   { id: 1, image: iit_mobile, alt: "Banner 1" },
   { id: 2, image: iit_mobile1, alt: "Banner 2" },
-  { id: 3, image: iit_mobile, alt: "Banner 3" },
+  { id: 3, image: iit_mobile2, alt: "Banner 3" },
 ];
 
 const Bannerr = () => {
@@ -59,7 +60,7 @@ const Bannerr = () => {
 
   return (
     <>
-      <div className="hidden md:block relative w-full h-[300px] mt-16 items-center justify-center overflow-hidden bg-[#f5f5f7]/50">
+      <div className="hidden md:block relative w-full h-[300px] mt-24 items-center justify-center overflow-hidden bg-[#f5f5f7]/50">
         {/* Slider Container */}
         <div className="relative flex items-center justify-center w-full h-full">
           {slides.map((slide, index) => {
@@ -115,7 +116,7 @@ const Bannerr = () => {
 
       {/* Mobile Slider */}
       <div
-        className="block md:hidden relative w-full h-[220px] max-w-3xl mx-auto overflow-hidden"
+        className="block md:hidden relative w-full h-[250px] max-w-3xl mx-auto overflow-hidden"
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
@@ -135,7 +136,7 @@ const Bannerr = () => {
             <img
               src={banner.image}
               alt={banner.alt}
-              className="w-[340px] h-32 mt-16 rounded-2xl"
+              className="w-[380px] h-36 mt-16 rounded-2xl"
             />
           </motion.div>
           

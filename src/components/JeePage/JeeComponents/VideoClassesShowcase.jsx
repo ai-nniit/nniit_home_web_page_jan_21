@@ -1,7 +1,18 @@
 import React, { useState } from 'react';
 import { AiOutlineHeart, AiOutlineEye } from 'react-icons/ai'; // Importing icons
-import pw from '../../../assets/sub6.jpg';
-import msunion from '../../../assets/sub8.jpg';
+
+import t1 from '../../../assets/Tutors/Tut1.png';
+import t2 from '../../../assets/Tutors/Tut2.png';
+import t3 from '../../../assets/Tutors/Tut3.png';
+import t4 from '../../../assets/Tutors/Tut4.png';
+import t5 from '../../../assets/Tutors/Tut5.png';
+
+import t11 from '../../../assets/Tutors/Tut11.png';
+import t12 from '../../../assets/Tutors/Tut12.png';
+import t13 from '../../../assets/Tutors/Tut13.png';
+import t14 from '../../../assets/Tutors/Tut14.png';
+import t15 from '../../../assets/Tutors/Tut15.png'; 
+
 
 const categories = ['Physics', 'Chemistry', 'Mathematics', 'Strategy & College Overview'];
 
@@ -10,7 +21,7 @@ const videos = {
     {
       title: 'Dr. Raj Kumar',
       description: 'Top Strategies to Crack JEE Advanced with Ease.',
-      thumbnail: pw,
+      thumbnail: t1,
       videoUrl: 'https://www.youtube.com/embed/2Ot52xaPPik',
       likes: "500K",
       views: "1M",
@@ -18,7 +29,7 @@ const videos = {
     {
       title: 'Dr. Rani Kumar Mandal',
       description: 'Step-by-Step Guide to Master JEE Mains.',
-      thumbnail: msunion,
+      thumbnail: t11,
       videoUrl: 'https://www.youtube.com/watch?v=2Ot52xaPPik&pp=ygUEamVlIA%3D%3D',
       likes: "800K",
       views: "2M",
@@ -26,7 +37,7 @@ const videos = {
     {
       title: 'Dr. Raj Kumar',
       description: 'Top Strategies to Crack JEE Advanced with Ease.',
-      thumbnail: pw,
+      thumbnail: t2,
       videoUrl: 'https://www.youtube.com/embed/2Ot52xaPPik',
       likes: "500K",
       views: "1M",
@@ -34,7 +45,7 @@ const videos = {
     {
       title: 'Dr. Rani Kumar Mandal',
       description: 'Step-by-Step Guide to Master JEE Mains.',
-      thumbnail: msunion,
+      thumbnail: t12,
       videoUrl: 'https://www.youtube.com/watch?v=2Ot52xaPPik&pp=ygUEamVlIA%3D%3D',
       likes: "800K",
       views: "2M",
@@ -44,7 +55,7 @@ const videos = {
     {
       title: 'NEET 2024 Preparation',
       description: 'Tips for Medical Aspirants to Ace NEET 2024.',
-      thumbnail: pw,
+      thumbnail: t3,
       videoUrl: 'https://www.youtube.com/embed/2Ot52xaPPik',
       likes: 180,
       views: 6500,
@@ -52,7 +63,7 @@ const videos = {
     {
       title: 'Dr. Raj Kumar',
       description: 'Top Strategies to Crack JEE Advanced with Ease.',
-      thumbnail: pw,
+      thumbnail: t13,
       videoUrl: 'https://www.youtube.com/embed/2Ot52xaPPik',
       likes: "500K",
       views: "1M",
@@ -60,7 +71,7 @@ const videos = {
     {
       title: 'Dr. Rani Kumar Mandal',
       description: 'Step-by-Step Guide to Master JEE Mains.',
-      thumbnail: msunion,
+      thumbnail: t14,
       videoUrl: 'https://www.youtube.com/watch?v=2Ot52xaPPik&pp=ygUEamVlIA%3D%3D',
       likes: "800K",
       views: "2M",
@@ -68,7 +79,7 @@ const videos = {
     {
       title: 'Dr. Raj Kumar',
       description: 'Top Strategies to Crack JEE Advanced with Ease.',
-      thumbnail: pw,
+      thumbnail: t4,
       videoUrl: 'https://www.youtube.com/embed/2Ot52xaPPik',
       likes: "500K",
       views: "1M",
@@ -78,7 +89,7 @@ const videos = {
     {
       title: 'IPMAT Success Stories',
       description: 'How Students Cleared IPMAT with Strategic Planning.',
-      thumbnail: pw,
+      thumbnail: t5,
       videoUrl: 'https://www.youtube.com/embed/2Ot52xaPPik',
       likes: 150,
       views: 4500,
@@ -88,11 +99,11 @@ const videos = {
     {
       title: 'Crack SAT with These Tips',
       description: 'Effective Methods to Prepare for the SAT Exam.',
-      thumbnail: pw,
+      thumbnail: t15,
       videoUrl: 'https://www.youtube.com/embed/2Ot52xaPPik',
       likes: 200,
       views: 8000,
-    },
+    }, 
   ],
 };
 
@@ -112,7 +123,7 @@ const VideoClassesShowcase = () => {
   };
 
   return (
-    <div className="relative min-h-64 p-1 bg-white text-black overflow-hidden">
+    <div className="relative min-h-64 p-1 bg-white text-black overflow-hidden mt-3">
       {/* Inline SVG Grid Background */}
       <svg
         width="100%"
@@ -139,7 +150,7 @@ const VideoClassesShowcase = () => {
       </svg>
 
       {/* Content Wrapper */}
-      <div className="relative z-0">
+      <div className="relative z-0 ml-2">
         {/* Header */}
         <header className="mb-4 px-4">
           <div className="flex items-center space-x-1 mb-0.5">
@@ -170,17 +181,17 @@ const VideoClassesShowcase = () => {
                 </linearGradient>
               </defs>
             </svg>
-            <p className="text-[10px] text-gray-400 mt-2 font-serif font-light">
+            <p className="text-[10px] text-gray-400 mt-1 font-serif font-light">
               DISCOVER NEW PERSPECTIVES
             </p>
           </div>
-          <h3 className="text-2xl md:text-3xl font-extrabold font-serif text-black -mt-1">
+          <h3 className="text-2xl md:text-3xl font-extrabold font-serif text-black mt-1">
             Classes By IIT Experts
           </h3>
         </header>
 
         {/* Navigation with Black Background */}
-        <div className="bg-black py-2 px-4 mx-3 rounded-md">
+        <div className="bg-black py-2 px-3 mx-3 rounded-md">
           <nav className="flex justify-start -space-x-5 md:space-x-10 overflow-x-auto">
             {categories.map((category) => (
               <button

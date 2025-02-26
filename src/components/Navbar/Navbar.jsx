@@ -1,578 +1,11 @@
-// import React, { useState, useEffect, useRef } from 'react';
-// import { IoMdMenu, IoMdArrowDropdown, IoMdClose } from 'react-icons/io';
-// import { motion } from 'framer-motion';
-// import nniit_logo from '../../assets/logo.png';
-// import { IoCalendarOutline, IoCallOutline } from 'react-icons/io5';
-
-// const NavbarMenu = [
-//   { id: 2, title: "Courses", link: "#", subMenu: [
-//       { title: "JEE", path: "/courses/jee" },
-//       { title: "NEET", path: "/courses/neet" },
-//       { title: "6 to 12", path: "/courses/k6tok12" },
-//     ]},
-//   { id: 3, title: "Why Only NNIIT", link: "#" },
-//   { id: 4, title: "Study Material", link: "#" },
-//   { id: 5, title: "Blog", link: "#" },
-// ];
-
-// const Navbar = () => {
-//   const [openDropdown, setOpenDropdown] = useState(null);
-//   const [isScrolled, setIsScrolled] = useState(false);
-//   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-//   const menuRef = useRef(null);
-
-//   const toggleDropdown = (menuId) => {
-//     setOpenDropdown(openDropdown === menuId ? null : menuId);
-//   };
-
-//   useEffect(() => {
-//     document.body.style.overflow = isMobileMenuOpen ? "hidden" : "";
-//   }, [isMobileMenuOpen]);
-
-//   useEffect(() => {
-//     const handleClickOutside = (e) => {
-//       if (menuRef.current && !menuRef.current.contains(e.target)) {
-//         setOpenDropdown(null);
-//       }
-//     };
-//     document.addEventListener('mousedown', handleClickOutside);
-//     return () => document.removeEventListener('mousedown', handleClickOutside);
-//   }, []);
-
-//   useEffect(() => {
-//     const handleScroll = () => setIsScrolled(window.scrollY > 10);
-//     window.addEventListener("scroll", handleScroll);
-//     return () => window.removeEventListener("scroll", handleScroll);
-//   }, []);
-
-//   return (
-//     <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? "bg-white/70 shadow-lg backdrop-blur-md" : "bg-transparent"}`}>
-//   <motion.div initial={{ opacity: 0, y: -50 }} animate={{ opacity: 1, y: 0 }} className="container flex justify-between items-center px-11 py-2">
-//     <img src={nniit_logo} alt="NNIIT Logo" className="h-12 sm:h-14" />
-
-//     <div className="hidden lg:flex items-center gap-4" ref={menuRef}>
-//       {NavbarMenu.map((menu) => (
-//         <div key={menu.id} className="relative group">
-//           <button 
-//             className={`py-2 px-3 flex items-center transition-colors duration-300 ${isScrolled ? "text-black hover:text-gray-700" : "text-white hover:text-secondary"}`}
-//             onClick={() => menu.subMenu && toggleDropdown(menu.id)}
-//           >
-//             {menu.title} {menu.subMenu && <IoMdArrowDropdown className="ml-1" />}
-//           </button>
-//           {menu.subMenu && openDropdown === menu.id && (
-//             <div className="absolute top-full left-0 mt-2 bg-white shadow-md rounded-md py-2 w-44">
-//               {menu.subMenu.map((sub, index) => (
-//                 <a key={index} href={sub.path} className="block px-4 py-2 hover:bg-gray-100">{sub.title}</a>
-//               ))}
-//             </div>
-//           )}
-//         </div>
-//       ))}
-//     </div>
-
-//     <div className="hidden lg:flex items-center gap-3">
-//       <button
-//         className="bg-gradient-to-r from-indigo-500 to-blue-500 text-white px-3 py-2 rounded-md text-sm flex items-center gap-2"
-//         onClick={() => window.open('https://calendar.app.google/ACitve3sDuj7vWWt5', '_blank')}
-//       >
-//         Book a Free Demo
-//         <IoCalendarOutline className="text-xl animate-[phone-ring_1s_infinite]" />
-//       </button>
-
-
-//       <div className={`flex items-center justify-center w-8 h-8 bg-gray-400 rounded-full group-hover:bg-orange-500 transition duration-300`}>
-//           <IoCallOutline className="text-white text-sm group-hover:text-white transition duration-300" />
-//         </div>
-//         <div>
-//           <p className="text-sm text-white hover:text-green-400">Talk to our experts <br /> +91 987654321</p>
-//         </div>
-
-
-//         <button className="px-6 py-2 border border-white text-white rounded-md transition-colors duration-300 hover:border-gray-300">
-//       Sign in
-//     </button>
-
-//     </div>
-
-//     <div className="lg:hidden" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
-//       <IoMdMenu className="text-3xl cursor-pointer" />
-//     </div>
-//   </motion.div>
-
-//   {isMobileMenuOpen && (
-//     <div className="fixed inset-0 bg-gray-100 z-50 p-6 w-4/5 sm:w-3/5 shadow-lg">
-//       <div className="flex justify-between items-center mb-6">
-//         <img src={nniit_logo} alt="NNIIT Logo" className="h-10" />
-//         <IoMdClose className="text-3xl cursor-pointer" onClick={() => setIsMobileMenuOpen(false)} />
-//       </div>
-//       <ul className="space-y-3 text-lg">
-//         {NavbarMenu.map((menu) => (
-//           <li key={menu.id}>
-//             <button className="w-full text-left py-2 border-b border-gray-300 flex items-center justify-between" onClick={() => menu.subMenu && toggleDropdown(menu.id)}>
-//               {menu.title} {menu.subMenu && <IoMdArrowDropdown className="ml-1" />}
-//             </button>
-//             {menu.subMenu && openDropdown === menu.id && (
-//               <div className="mt-2 bg-white shadow-md rounded-md py-2">
-//                 {menu.subMenu.map((sub, index) => (
-//                   <a key={index} href={sub.path} className="block px-4 py-2 hover:bg-gray-100">{sub.title}</a>
-//                 ))}
-//               </div>
-//             )}
-//           </li>
-//         ))}
-//       </ul>
-
-//       <div className="mt-6 space-y-3">
-//         <button className="w-full bg-blue-600 text-white py-2 rounded-md text-center" onClick={() => window.open('https://calendar.app.google/ACitve3sDuj7vWWt5', '_blank')}>Book a Free Demo</button>
-//         <button className="w-full bg-gray-200 py-2 rounded-md flex items-center justify-center gap-2">
-//           <IoCallOutline className="text-gray-600" /> +91 987654321
-//         </button>
-//         <button className="w-full bg-black text-white py-2 rounded-md text-center" onClick={() => window.open('https://nniit.com/signup', '_blank')}>Sign In</button>
-//       </div>
-//     </div>
-//   )}
-// </nav>
-
-//   );
-// };
-
-// export default Navbar;
-
-
-
-
-
-// import React, { useState, useEffect, useRef } from 'react';
-// import { IoMdMenu, IoMdArrowDropdown, IoMdClose } from 'react-icons/io';
-// import { motion } from 'framer-motion';
-// import nniit_logo from '../../assets/logo.png';
-// import { IoCalendarOutline, IoCallOutline } from 'react-icons/io5';
-
-// const NavbarMenu = [
-//   { id: 2, title: "Courses", link: "#", subMenu: [
-//       { title: "JEE", path: "/courses/jee" },
-//       { title: "NEET", path: "/courses/neet" },
-//       { title: "6 to 12", path: "/courses/k6tok12" },
-//     ]},
-//   { id: 3, title: "Why Only NNIIT", link: "#" },
-//   { id: 4, title: "Study Material", link: "#" },
-//   { id: 5, title: "Blog", link: "#" },
-// ];
-
-// const Navbar = () => {
-//   const [openDropdown, setOpenDropdown] = useState(null);
-//   const [isScrolled, setIsScrolled] = useState(false);
-//   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-//   const menuRef = useRef(null);
-
-//   const toggleDropdown = (menuId) => {
-//     setOpenDropdown(openDropdown === menuId ? null : menuId);
-//   };
-
-//   useEffect(() => {
-//     document.body.style.overflow = isMobileMenuOpen ? "hidden" : "";
-//   }, [isMobileMenuOpen]);
-
-//   useEffect(() => {
-//     const handleClickOutside = (e) => {
-//       if (menuRef.current && !menuRef.current.contains(e.target)) {
-//         setOpenDropdown(null);
-//       }
-//     };
-//     document.addEventListener('mousedown', handleClickOutside);
-//     return () => document.removeEventListener('mousedown', handleClickOutside);
-//   }, []);
-
-//   useEffect(() => {
-//     const handleScroll = () => setIsScrolled(window.scrollY > 10);
-//     window.addEventListener("scroll", handleScroll);
-//     return () => window.removeEventListener("scroll", handleScroll);
-//   }, []);
-
-//   return (
-//     <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? "bg-white/70 shadow-lg backdrop-blur-md" : "bg-transparent"}`}>
-//       <motion.div initial={{ opacity: 0, y: -50 }} animate={{ opacity: 1, y: 0 }} className="container flex justify-between items-center px-11 py-2">
-//         <img src={nniit_logo} alt="NNIIT Logo" className="h-12 sm:h-14" />
-
-//         <div className="hidden lg:flex items-center gap-4" ref={menuRef}>
-//           {NavbarMenu.map((menu) => (
-//             <div key={menu.id} className="relative group">
-//               <button 
-//                 className={`py-2 px-3 flex items-center font-sf transition-colors duration-300 ${isScrolled ? "text-black hover:text-gray-700" : "text-white hover:text-secondary"}`}
-//                 onClick={() => menu.subMenu && toggleDropdown(menu.id)}
-//               >
-//                 {menu.title} {menu.subMenu && <IoMdArrowDropdown className="ml-1" />}
-//               </button>
-//               {menu.subMenu && openDropdown === menu.id && (
-//                 <div className="absolute top-full left-0 mt-2 bg-white shadow-md rounded-md py-2 w-44">
-//                   {menu.subMenu.map((sub, index) => (
-//                     <a key={index} href={sub.path} className="block px-4 py-2 hover:bg-gray-100">{sub.title}</a>
-//                   ))}
-//                 </div>
-//               )}
-//             </div>
-//           ))}
-//         </div>
-
-//         <div className="hidden lg:flex items-center gap-3">
-//           <button
-//             className=" font-sf bg-gradient-to-r from-indigo-500  to-blue-500 text-white px-3 py-2 rounded-md text-sm flex items-center gap-2"
-//             onClick={() => window.open('https://calendar.app.google/ACitve3sDuj7vWWt5', '_blank')}
-//           >
-//             Book a Free Demo
-//             <IoCalendarOutline className="text-xl animate-[phone-ring_1s_infinite]" />
-//           </button>
-
-//           <div className={`flex items-center justify-center w-8 h-8 bg-gray-400 rounded-full group-hover:bg-orange-500 transition duration-300`}>
-//             <IoCallOutline className="text-white text-sm group-hover:text-white transition duration-300" />
-//           </div>
-//           <div>
-//             <p className={`text-sm font-sf transition-colors duration-300 ${isScrolled ? "text-black" : "text-white"} hover:text-green-400`}>
-//               Talk to our experts <br /> +91 987654321
-//             </p>
-//           </div>
-
-//           <button className={`px-6 py-2 border font-sf transition-colors duration-300 rounded-md ${isScrolled ? "border-black text-black hover:border-gray-500" : "border-white text-white hover:border-gray-300"}`}>
-//             Sign in
-//           </button>
-//         </div>
-
-//         <div className="lg:hidden" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
-//           <IoMdMenu className="text-3xl cursor-pointer" />
-//         </div>
-//       </motion.div>
-//     </nav>
-//   );
-// };
-
-// export default Navbar;
-
-// import React, { useState, useEffect, useRef } from 'react';
-// import { IoMdMenu, IoMdArrowDropdown, IoMdClose } from 'react-icons/io';
-// import { motion } from 'framer-motion';
-// import nniit_logo from '../../assets/logo.png';
-// import { IoCalendarOutline, IoCallOutline } from 'react-icons/io5';
-// import { 
-//   BookOpen, 
-//   GraduationCap, 
-//   Users, 
-//   BookOpenCheck,
-//   Target,
-//   School,
-//   TestTube,
-//   Award,
-//   Brain,
-//   Sparkles,
-//   ChevronRight
-// } from 'lucide-react';
-
-// const NavbarMenu = [
-//   { 
-//     id: 2, 
-//     title: "Courses", 
-//     link: "#", 
-//     subMenu: [
-//       { title: "JEE", path: "/courses/jee" },
-//       { title: "NEET", path: "/courses/neet" },
-//       { title: "6 to 12", path: "/courses/k6tok12" },
-//     ],
-//     megaMenu: {
-//       sections: [
-//         {
-//           title: "Long Term Courses",
-//           icon: <GraduationCap className="w-6 h-6 text-orange-500" />,
-//           items: [
-//             { 
-//               name: "Guaranteed Success Program", 
-//               icon: <Award className="w-5 h-5 text-green-500" />,
-//               subtext: "Guaranteed improvement in marks or get your fees back",
-//               link: "#" 
-//             },
-//             { 
-//               name: "One-to-one LIVE classes",
-//               icon: <Users className="w-5 h-5 text-blue-500" />,
-//               subtext: "Learn one-to-one with a teacher for a personalised experience",
-//               link: "#" 
-//             },
-//             { 
-//               name: "Topic specific courses",
-//               icon: <BookOpenCheck className="w-5 h-5 text-purple-500" />,
-//               subtext: "Master any topic at just ₹1",
-//               link: "#" 
-//             }
-//           ]
-//         },
-//         {
-//           title: "Find courses by class",
-//           icon: <BookOpen className="w-6 h-6 text-blue-500" />,
-//           items: [
-//             { name: "Repeater Science PCM", link: "#", emoji: "" },
-//             { name: "Repeater Science PCB", link: "#", emoji: "" },
-//             { name: "Class 12 Science PCM", link: "#", emoji: "" },
-//             { name: "Class 12 Science PCB", link: "#", emoji: "" },
-//             { name: "Class 11 Science PCM", link: "#", emoji: "" },
-//             { name: "Class 11 Science PCB", link: "#", emoji: "" },
-//             { name: "Class 10", link: "#", emoji: "" },
-//             { name: "Class 9", link: "#", emoji: "" },
-//             { name: "Class 8", link: "#", emoji: "" }
-//           ]
-//         },
-//         {
-//           title: "Find courses by target",
-//           icon: <Target className="w-6 h-6 text-red-500" />,
-//           items: [
-//             { 
-//               name: "School tuition", 
-//               subtext: "For Class 3-12", 
-//               link: "#",
-//               // icon: <School className="w-5 h-5 text-blue-500" />,
-//               relatedData: {
-//                 title: "School Boards",
-//                 items: [
-//                   { name: "CBSE", subtext: "Class 6-12", link: "#" },
-//                   { name: "ICSE", subtext: "Class 6-10", link: "#" },
-//                   { name: "All Boards", subtext: "Class 3-5", link: "#" },
-//                   { name: "Maharashtra Board", subtext: "Class 8-10", link: "#" }
-//                 ]
-//               }
-//             },
-//             { 
-//               name: "JEE", 
-//               subtext: "For Class 11-13", 
-//               link: "/courses/jee",
-//               // icon: <TestTube className="w-5 h-5 text-green-500" />,
-//               relatedData: {
-//                 title: "JEE Programs",
-//                 items: [
-//                   { name: "JEE Main", subtext: "Complete Course", link: "#" },
-//                   { name: "JEE Advanced", subtext: "Advanced Preparation", link: "#" },
-//                   { name: "Crash Course", subtext: "Quick Revision", link: "#" }
-//                 ]
-//               }
-//             },
-//             { 
-//               name: "NEET", 
-//               subtext: "For Class 11-13", 
-//               link: "/courses/neet",
-//               // icon: <Brain className="w-5 h-5 text-purple-500" />,
-//               relatedData: {
-//                 title: "NEET Programs",
-//                 items: [
-//                   { name: "Complete NEET Course", subtext: "Full Preparation", link: "#" },
-//                   { name: "Test Series", subtext: "Practice Tests", link: "#" },
-//                   { name: "Topic-wise Course", subtext: "Focus Learning", link: "#" }
-//                 ]
-//               }
-//             },
-//             { 
-//               name: "Olympiad", 
-//               subtext: "For Class 3-13", 
-//               link: "#",
-//               // icon: <Sparkles className="w-5 h-5 text-yellow-500" />,
-//               relatedData: {
-//                 title: "Olympiad Programs",
-//                 items: [
-//                   { name: "Mathematics", subtext: "Class 6-12", link: "#" },
-//                   { name: "Science", subtext: "Class 6-12", link: "#" },
-//                   { name: "English", subtext: "Class 3-12", link: "#" }
-//                 ]
-//               }
-//             }
-//           ]
-//         }
-//       ]
-//     }
-//   },
-//   { id: 3, title: "Why Only NNIIT", link: "#" },
-//   { id: 4, title: "Study Material", link: "#" },
-//   { id: 5, title: "Blog", link: "#" },
-// ];
-
-// const Navbar = () => {
-//   const [openDropdown, setOpenDropdown] = useState(null);
-//   const [isScrolled, setIsScrolled] = useState(false);
-//   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-//   const [hoveredMenu, setHoveredMenu] = useState(null);
-//   const [hoveredItem, setHoveredItem] = useState(null);
-//   const menuRef = useRef(null);
-//   const timeoutRef = useRef(null);
-
-//   const handleMouseEnter = (menuId) => {
-//     if (timeoutRef.current) clearTimeout(timeoutRef.current);
-//     setHoveredMenu(menuId);
-//   };
-
-//   const handleMouseLeave = () => {
-//     timeoutRef.current = setTimeout(() => {
-//       setHoveredMenu(null);
-//       setHoveredItem(null);
-//     }, 100);
-//   };
-
-//   const handleItemHover = (item) => {
-//     setHoveredItem(item);
-//   };
-
-//   const toggleDropdown = (menuId) => {
-//     setOpenDropdown(openDropdown === menuId ? null : menuId);
-//   };
-
-//   useEffect(() => {
-//     document.body.style.overflow = isMobileMenuOpen ? "hidden" : "";
-//   }, [isMobileMenuOpen]);
-
-//   useEffect(() => {
-//     const handleClickOutside = (e) => {
-//       if (menuRef.current && !menuRef.current.contains(e.target)) {
-//         setOpenDropdown(null);
-//       }
-//     };
-//     document.addEventListener('mousedown', handleClickOutside);
-//     return () => document.removeEventListener('mousedown', handleClickOutside);
-//   }, []);
-
-//   useEffect(() => {
-//     const handleScroll = () => setIsScrolled(window.scrollY > 10);
-//     window.addEventListener("scroll", handleScroll);
-//     return () => window.removeEventListener("scroll", handleScroll);
-//   }, []);
-
-//   return (
-//     <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? "bg-white/70 shadow-lg backdrop-blur-md" : "bg-transparent"}`}>
-//       <motion.div initial={{ opacity: 0, y: -50 }} animate={{ opacity: 1, y: 0 }} className="container flex justify-between items-center px-11 py-2">
-//         <img src={nniit_logo} alt="NNIIT Logo" className="h-12 sm:h-14" />
-
-//         <div className="hidden lg:flex items-center gap-4" ref={menuRef}>
-//   {NavbarMenu.map((menu) => (
-//     <div 
-//       key={menu.id} 
-//       className="relative group"
-//       onMouseEnter={() => handleMouseEnter(menu.id)}
-//       onMouseLeave={handleMouseLeave}
-//     >
-//       <button 
-//         className={`py-2 px-3 flex items-center font-sf transition-colors duration-300 ${isScrolled ? "text-black hover:text-gray-700" : "text-white hover:text-secondary"}`}
-//         onClick={() => menu.subMenu && toggleDropdown(menu.id)}
-//       >
-//         {menu.title} {menu.subMenu && <IoMdArrowDropdown className="ml-1" />}
-//       </button>
-      
-//       {menu.megaMenu && hoveredMenu === menu.id && (
-//         <div className="absolute left-0 top-full pt-3 w-[900px] -translate-x-1/4">
-//           <div className="bg-white rounded-sm shadow-xl p-4 grid grid-cols-3 gap-8 border-t border-gray-300">
-//             {menu.megaMenu.sections.map((section, idx) => (
-//               <div 
-//                 key={idx} 
-//                 className={`space-y-2 border-gray-300 ${idx !== menu.megaMenu.sections.length - 1 ? 'border-r border-gray-300 pr-4' : ''}`}
-//               >
-//                 <div className="flex items-center gap-2">
-//                   {section.icon}
-//                   <h3 className="font-semibold text-black text-[19px]">{section.title}</h3>
-//                 </div>
-//                 <div className="space-y-0">
-//                   {section.items.map((item, itemIdx) => (
-//                     <a
-//                       key={itemIdx}
-//                       href={item.link}
-//                       className="block hover:bg-gray-50 p-2 rounded-md transition-colors duration-150"
-//                       onMouseEnter={() => handleItemHover(item)}
-//                       onMouseLeave={() => handleItemHover(null)}
-//                     >
-//                       <div className="flex items-center gap-2">
-//                         {item.icon && item.icon}
-//                         {item.emoji && <span className="text-lg">{item.emoji}</span>}
-//                         <div>
-//                           <div className="text-gray-700 font-medium flex items-center gap-2">
-//                             {item.name}
-//                             {item.relatedData && <ChevronRight className="w-4 h-4" />}
-//                           </div>
-//                           {item.subtext && (
-//                             <div className="text-sm text-gray-500">{item.subtext}</div>
-//                           )}
-//                         </div>
-//                       </div>
-
-//                       {item.relatedData && hoveredItem === item && (
-//                         <div className="absolute left-full top-0 ml-4 w-52 bg-gray-100 rounded-sm shadow-lg p-2">
-//                           <h4 className="font-semibold text-gray-800 mb-2">{item.relatedData.title}</h4>
-//                           <div className="space-y-1">
-//                             {item.relatedData.items.map((relatedItem, relIdx) => (
-//                               <a
-//                                 key={relIdx}
-//                                 href={relatedItem.link}
-//                                 className="block hover:bg-gray-50 p-1 rounded-md"
-//                               >
-//                                 <div className="text-gray-700 font-semibold">{relatedItem.name}</div>
-//                                 {relatedItem.subtext && (
-//                                   <div className="text-sm text-gray-500">{relatedItem.subtext}</div>
-//                                 )}
-//                               </a>
-//                             ))}
-//                           </div>
-//                         </div>
-//                       )}
-//                     </a>
-//                   ))}
-//                 </div>
-//               </div>
-//             ))}
-//           </div>
-//         </div>
-//       )}
-
-//       {menu.subMenu && openDropdown === menu.id && !menu.megaMenu && (
-//         <div className="absolute top-full left-0 mt-2 bg-black shadow-md rounded-md py-2 w-28">
-//           {menu.subMenu.map((sub, index) => (
-//             <a key={index} href={sub.path} className="block px-4 py-2 hover:bg-gray-100">{sub.title}</a>
-//           ))}
-//         </div>
-//       )}
-//     </div>
-//   ))}
-// </div>
-
-//         <div className="hidden lg:flex items-center gap-3">
-//           <button
-//             className="font-sf bg-gradient-to-r from-indigo-500 to-blue-500 text-white px-3 py-2 rounded-md text-sm flex items-center gap-2"
-//             onClick={() => window.open('https://calendar.app.google/ACitve3sDuj7vWWt5', '_blank')}
-//           >
-//             Book a Free Demo
-//             <IoCalendarOutline className="text-xl animate-[phone-ring_1s_infinite]" />
-//           </button>
-
-//           <div className={`flex items-center justify-center w-8 h-8 bg-gray-400 rounded-full group-hover:bg-orange-500 transition duration-300`}>
-//             <IoCallOutline className="text-white text-sm group-hover:text-white transition duration-300" />
-//           </div>
-//           <div>
-//             <p className={`text-sm font-sf transition-colors duration-300 ${isScrolled ? "text-black" : "text-white"} hover:text-green-400`}>
-//               Talk to our experts <br /> +91 987654321
-//             </p>
-//           </div>
-
-//           <button className={`px-6 py-2 border font-sf transition-colors duration-300 rounded-md ${isScrolled ? "border-black text-black hover:border-gray-500" : "border-white text-white hover:border-gray-300"}`}>
-//             Sign in
-//           </button>
-//         </div>
-
-//         <div className="lg:hidden" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
-//           <IoMdMenu className="text-3xl cursor-pointer" />
-//         </div>
-//       </motion.div>
-//     </nav>
-//   );
-// };
-
-// export default Navbar;
-
-
-
-
 import React, { useState, useEffect, useRef } from 'react';
 import { IoMdMenu, IoMdArrowDropdown, IoMdClose } from 'react-icons/io';
 import { motion } from 'framer-motion';
 import nniit_logo from '../../assets/logo.png';
 import { IoCalendarOutline, IoCallOutline } from 'react-icons/io5';
 import { Search, Plus, BookOpen, Users, Award, Brain, MessageSquare, ChevronRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
+
 
 const boardSubItems = {
   'CBSE': [
@@ -611,20 +44,20 @@ const NavbarMenu = [
     megaMenu: {
       featured: [
         {
-          title: "Long Term Courses",
-          description: "Guaranteed improvement in marks or get your fees back",
+          title: "JEE",
+          description: "Achieve JEE success with expert guidance and personalized, one-on-one learning.",
           icon: BookOpen,
-          link: "#"
+          link: "/courses/jee"
         },
         {
-          title: "One-to-one LIVE classes",
-          description: "Learn one-to-one with a teacher for a personalised experience",
+          title: "NEET",
+          description: "Achieve NEET success with personalized, one-on-one learning.",
           icon: Users,
-          link: "#"
+          link: "/courses/neet"
         },
         {
-          title: "Topic specific courses",
-          description: "Master any topic at just ₹1",
+          title: "One-to-one class",
+          description: "One-on-one LIVE classes, recorded for students to revisit anytime.",
           icon: Award,
           link: "#"
         }
@@ -678,7 +111,7 @@ const NavbarMenu = [
   },
   { id: 3, title: "Why Only NNIIT", link: "#" },
   { id: 4, title: "Study Material", link: "#" },
-  { id: 5, title: "Blog", link: "#" },
+  { id: 5, title: "Blog", link: "/nniitblogpage/blog" },
 ];
 
 const Navbar = () => {
@@ -745,7 +178,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? "bg-white/70 shadow-lg backdrop-blur-md" : "bg-transparent"}`}>
+    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? "bg-white/70 shadow-lg backdrop-blur-md" : "bg-transparent"}`}>
       <motion.div initial={{ opacity: 0, y: -50 }} animate={{ opacity: 1, y: 0 }} className="container flex justify-between items-center px-11 py-2">
         <img src={nniit_logo} alt="NNIIT Logo" className="h-12 sm:h-14" />
 
@@ -757,42 +190,58 @@ const Navbar = () => {
               onMouseEnter={() => handleMenuEnter(menu.id)}
               onMouseLeave={handleMenuLeave}
             >
-              <button 
-                className={`py-2 px-3 flex items-center font-sf transition-colors duration-300 ${isScrolled ? "text-black hover:text-gray-700" : "text-white hover:text-secondary"}`}
+              {/* <button 
+                className={`py-2 px-3 flex items-center font-sf transition-colors duration-300 ${isScrolled ? "text-black hover:text-gray-700" : "text-gray-400 hover:text-secondary"}`}
                 onClick={() => menu.subMenu && toggleDropdown(menu.id)}
               >
                 {menu.title} {menu.subMenu && <IoMdArrowDropdown className="ml-1" />}
-              </button>
+              </button> */}
+
+                  {menu.subMenu ? (
+                          <button 
+                            className={`py-2 px-3 flex items-center font-sf transition-colors duration-300 ${isScrolled ? "text-black hover:text-gray-700" : "text-gray-400 hover:text-secondary"}`}
+                            onClick={() => toggleDropdown(menu.id)}
+                          >
+                            {menu.title} {menu.subMenu && <IoMdArrowDropdown className="ml-1" />}
+                          </button>
+                        ) : (
+                          <Link 
+                            to={menu.link}  
+                            className={`py-2 px-3 flex items-center font-sf transition-colors duration-300 ${isScrolled ? "text-black hover:text-gray-700" : "text-gray-400 hover:text-secondary"}`}
+                          >
+                            {menu.title}
+                          </Link>
+                        )}
               
               {menu.megaMenu && hoveredMenu === menu.id && (
                 <div 
-                  className="absolute top-full left-28 mt-3 bg-white shadow-xl rounded-lg w-[900px] -translate-x-1/4"
+                  className="absolute top-full left-28 mt-3 bg-white shadow-xl rounded-lg w-[700px] -translate-x-1/4"
                   onMouseEnter={() => handleMenuEnter(menu.id)}
                   onMouseLeave={handleMenuLeave}
                 >
                   {menu.megaMenu.featured && (
-                    <div className="grid grid-cols-3 gap-4 p-4 bg-gray-50 rounded-t-sm border-b border-gray-100">
+                    <div className="grid grid-cols-3 gap-4 -p-3 bg-gray-50 rounded-t-sm border-b border-gray-100">
                       {menu.megaMenu.featured.map((item, idx) => {
                         const Icon = item.icon;
                         return (
                           <a
                             href={item.link}
                             key={idx}
-                            className="flex items-start gap-3 p-3 rounded-lg hover:bg-white transition-all duration-200 cursor-pointer group"
+                            className="flex items-start gap-4 p-3 rounded-lg hover:bg-white transition-all duration-200 cursor-pointer group"
                           >
                             <div className="p-2 bg-white rounded-lg shadow-sm group-hover:shadow-md transition-shadow duration-200">
                               <Icon className="w-5 h-5 text-blue-600" />
                             </div>
                             <div>
                               <h3 className="font-semibold text-gray-900 group-hover:text-blue-600 transition-colors duration-200">{item.title}</h3>
-                              <p className="text-sm text-gray-600 mt-0.5">{item.description}</p>
+                              <p className="text-[12px] text-gray-600 mt-0.5">{item.description}</p>
                             </div>
                           </a>
                         );
                       })}
                     </div>
                   )}
-                  <div className="grid grid-cols-4 p-2 relative ">
+                  <div className="grid grid-cols-3 p-2 -mt-2 relative ">
                     {menu.megaMenu.columns.map((column, idx) => {
                       const Icon = column.icon;
                       return (
@@ -802,11 +251,11 @@ const Navbar = () => {
                         onMouseEnter={() => column.title === "Boards" && handleBoardEnter(item.label)}
                         onMouseLeave={() => column.title === "Boards" && handleBoardLeave()}
                       >                      
-                          <div className="flex items-center gap-2">
+                          <div className="flex items-center gap-1">
                             <Icon className="w-4 h-4 text-blue-600" />
-                            <h3 className="font-semibold text-gray-900">{column.title}</h3>
+                            <h3 className="font-semibold font-sf text-gray-900">{column.title}</h3>
                           </div>
-                          <div className="space-y-0.5 overflow-y-auto scrollbar-hide" style={{ maxHeight: '250px' }}>
+                          <div className="space-y-0.5 overflow-y-auto scrollbar-hide" style={{ maxHeight: '230px' }}>
                             {column.items.map((item, itemIdx) => (
                               <div
                                 key={itemIdx}
@@ -821,7 +270,7 @@ const Navbar = () => {
                                   <div className="flex flex-col">
                                     <span className="text-gray-900">{item.label}</span>
                                     {item.subLabel && (
-                                      <span className="text-sm text-gray-500">{item.subLabel}</span>
+                                      <span className="text-xs text-gray-500">{item.subLabel}</span>
                                     )}
                                   </div>
                                   {/* {item.hasSubMenu && (
@@ -830,7 +279,7 @@ const Navbar = () => {
                                 </a>
                                                                                                                                                                                 {column.title === "Boards" && hoveredBoard === item.label && (
                                     <div 
-                                      className="absolute left-full top-0 ml-1 bg-white shadow-lg rounded-lg p-4 min-w-[280px] board-submenu"
+                                      className="absolute left-full top-0 ml-1 bg-white shadow-lg rounded-lg p-4 min-w-[250px] board-submenu"
                                       onMouseEnter={() => handleBoardEnter(item.label)}
                                       onMouseLeave={handleBoardLeave}
                                     >
@@ -887,12 +336,12 @@ const Navbar = () => {
             <IoCallOutline className="text-white text-sm group-hover:text-white transition duration-300" />
           </div>
           <div>
-            <p className={`text-sm font-sf transition-colors duration-300 ${isScrolled ? "text-black" : "text-white"} hover:text-green-400`}>
+            <p className={`text-sm font-sf transition-colors duration-300 ${isScrolled ? "text-black" : "text-gray-500"} hover:text-green-400`}>
               Talk to our experts <br /> +91 987654321
             </p>
           </div>
 
-          <button className={`px-6 py-2 border font-sf transition-colors duration-300 rounded-md ${isScrolled ? "border-black text-black hover:border-gray-500" : "border-white text-white hover:border-gray-300"}`}>
+          <button className={`px-6 py-2 border font-sf transition-colors duration-300 rounded-md ${isScrolled ? "border-black text-black hover:border-gray-500" : "border-gray-700 text-gray-500 hover:border-gray-300"}`}>
             Sign in
           </button>
         </div>
@@ -901,6 +350,65 @@ const Navbar = () => {
           <IoMdMenu className="text-3xl cursor-pointer" />
         </div>
       </motion.div>
+
+      {isMobileMenuOpen && (
+  <div 
+  className="fixed inset-0 bg-black bg-opacity-50 z-[9999] lg:hidden"
+  onClick={() => setIsMobileMenuOpen(false)} // Closes menu when clicking outside
+>
+  <div 
+    className="absolute right-0 top-0 w-3/4 h-full bg-white shadow-lg p-6 z-[10000]"
+    onClick={(e) => e.stopPropagation()} // Prevents closing when clicking inside the menu
+  >
+    <button 
+      onClick={() => setIsMobileMenuOpen(false)} 
+      className="absolute top-4 right-4 text-gray-700"
+    >
+      <IoMdClose size={24} />
+    </button>
+    <ul className="mt-10 space-y-4">
+      {NavbarMenu.map((menu) => (
+        <li key={menu.id}>
+          {menu.subMenu ? (
+            <details className="group">
+              <summary className="flex justify-between items-center cursor-pointer text-lg font-semibold">
+                {menu.title}
+                <IoMdArrowDropdown className="ml-2 transition-transform group-open:rotate-180" />
+              </summary>
+              <ul className="mt-2 ml-4 space-y-2">
+                {menu.subMenu.map((sub) => (
+                  <li key={sub.title}>
+                    <Link 
+                      to={sub.path} 
+                      className="text-gray-600 block py-1" 
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      {sub.title}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </details>
+          ) : (
+            <Link 
+              to={menu.link} 
+              className="text-lg font-semibold block"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              {menu.title}
+            </Link>
+          )}
+        </li>
+      ))}
+    </ul>
+  </div>
+</div>
+
+
+
+)}
+
+
     </nav>
   );
 };
