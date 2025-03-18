@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import nniit_logo from '../../assets/logo.png';
 import { IoCalendarOutline, IoCallOutline } from 'react-icons/io5';
 import { Search, Plus, BookOpen, Users, Award, Brain, MessageSquare, ChevronRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 const boardSubItems = {
@@ -123,6 +123,8 @@ const Navbar = () => {
   const menuRef = useRef(null);
   const hoverTimeoutRef = useRef(null);
   const boardHoverTimeoutRef = useRef(null);
+
+  const navigate = useNavigate();
 
   const toggleDropdown = (menuId) => {
     setOpenDropdown(openDropdown === menuId ? null : menuId);
@@ -341,9 +343,21 @@ const Navbar = () => {
             </p>
           </div>
 
-          <button className={`px-6 py-2 border font-sf transition-colors duration-300 rounded-md ${isScrolled ? "border-black text-black hover:border-gray-500" : "border-gray-700 text-gray-500 hover:border-gray-300"}`}>
+          {/* <button className={`px-6 py-2 border font-sf transition-colors duration-300 rounded-md ${isScrolled ? "border-black text-black hover:border-gray-500" : "border-gray-700 text-gray-500 hover:border-gray-300"}`}>
             Sign in
-          </button>
+          </button> */}
+
+          <button
+        className={`px-6 py-2 border font-sf transition-colors duration-300 rounded-md ${
+          isScrolled
+            ? "border-black text-black hover:border-gray-500"
+            : "border-gray-700 text-gray-500 hover:border-gray-300"
+        }`}
+        onClick={() => navigate("/signup")} // Navigates to Signup
+          >
+        Sign in
+      </button>
+
         </div>
 
         <div className="lg:hidden" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>

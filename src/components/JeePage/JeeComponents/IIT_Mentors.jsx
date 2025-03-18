@@ -4,6 +4,7 @@ import IIT_Delhi from '../../../assets/IIT_Delhi_logo.webp';
 import IIT_Kharagpur from '../../../assets/IIT_Kharagpur_Logo.webp';
 import IIT_Khanpur from '../../../assets/IIT_Khanpur_Logo.png';
 import IIT_Madras from '../../../assets/IIT_Madras_Logo.webp';
+import IIT_Gauhathi from '../../../assets/IIT_Gauhathi1.png';
 
 const IITSection = () => {
   return (
@@ -59,11 +60,11 @@ const IITSection = () => {
 
         <div className="flex md:hidden flex-col items-center">
           <img
-            src={IIT_Kharagpur}
+            src={IIT_Gauhathi}
             alt="IIT Kharagpur"
             className="w-20 md:w-24"
           />
-          <h3 className="text-lg md:text-xl font-medium mt-4">IIT Kharagpur</h3>
+          <h3 className="text-lg md:text-xl font-medium mt-4">IIT Guwahati</h3>
           <p className="text-gray-600 text-sm md:text-base">10 + Mentors</p>
         </div>
 

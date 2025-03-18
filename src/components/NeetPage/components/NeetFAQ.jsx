@@ -98,8 +98,7 @@ These tests enhance confidence and provide students with a real exam experience 
           ))}
         </div>
       </div>
-  
-      {/* Right: Image Section (Visible only on desktop) */}
+        {/* Right: Image Section (Visible only on desktop) */}
       <div className="lg:w-1/2 w-full justify-center mt-8 lg:mt-0 hidden lg:block">
         <img
           src={nniitLogo}

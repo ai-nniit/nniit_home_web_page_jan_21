@@ -1,12 +1,16 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import slide1 from '../../../assets/slide4.png';
-import slide2 from '../../../assets/slide2.png';
-import slide3 from '../../../assets/slide3.png';
+import slide1 from '../../../assets/slide1.jpeg';
+import slide2 from '../../../assets/slide22.jpeg';
+import slide3 from '../../../assets/slide33.jpeg';
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import iit_mobile from '../../../assets/slide4.png';
-import iit_mobile1 from '../../../assets/slide3.png';
-import iit_mobile2 from '../../../assets/slide2.png';
+// import iit_mobile from '../../../assets/slide4.png';
+// import iit_mobile1 from '../../../assets/slide3.png';
+// import iit_mobile2 from '../../../assets/slide21.png';
+
+import iit_mobile from '../../../assets/slide1.jpeg';
+import iit_mobile1 from '../../../assets/slide2.jpeg';
+import iit_mobile2 from '../../../assets/slide3.jpeg';
 
 const banners = [
   { id: 1, image: iit_mobile, alt: "Banner 1" },

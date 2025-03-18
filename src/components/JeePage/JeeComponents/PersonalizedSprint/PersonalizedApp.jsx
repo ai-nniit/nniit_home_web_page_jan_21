@@ -130,7 +130,7 @@ function App() {
               {/* <Brain className="w-12 h-12 text-blue-600" />*/}
                {/* Header */}
         <header className="mb-4 px-4">
-          <div className="flex items-center space-x-1 mb-0.5">
+          <div className="flex items-center space-x-1 mb-0.5 -ml-10">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="14"
@@ -162,13 +162,13 @@ function App() {
               DISCOVER NEW PERSPECTIVES
             </p>
           </div>
-          <h1 className="text-4xl font-bold font-sf text-gray-800 mb-2 ">
+          <h1 className="text-2xl md:text-4xl font-bold font-sf text-gray-800 mb-2 -ml-10 ">
               Personalized Learning Sprint
             </h1>
         </header>
             </div>
             
-            <p className="text-lg font-sf text-gray-600 mb-4">
+            <p className="text-lg font-sf text-gray-600 mb-4 -mt-10">
               Answer a few questions to get a personalized learning analysis tailored just for you.
             </p>
             <ul className="list-disc pl-5 text-gray-700 font-sf">
@@ -179,6 +179,7 @@ function App() {
           </motion.div>
 
           {/* Right Section - Questions & Options */}
+          <div className='-mt-16 md:mt-0'>
           <AnimatePresence mode="wait">
             <motion.div 
               key="question"
@@ -201,6 +202,7 @@ function App() {
               </motion.div>
             </motion.div>
           </AnimatePresence>
+          </div>
         </div>
       ) : (
         <motion.div
